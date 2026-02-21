@@ -9,7 +9,7 @@ export default function NotFound() {
             <SEOHead
                 title="Page Not Found | AI Voice Agents for Home Services"
                 description="The page you're looking for cannot be found."
-                canonicalUrl="/404"
+                path="/404"
             />
 
             <SectionWrapper bg="white" className="flex-grow flex items-center text-center py-32 md:py-48">

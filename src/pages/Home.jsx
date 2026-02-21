@@ -218,8 +218,8 @@ export default function Home() {
                     <div className="bg-white p-8 rounded-2xl border border-primary/20 text-center shadow-lg hover:-translate-y-1 transition-transform">
                         <OverlineTag className="bg-primary/5 text-primary">ELECTRICAL DEMO</OverlineTag>
                         <h3 className="text-xl font-semibold mb-6">Bolt Electrical AI Reception</h3>
-                        <a href="tel:+447782214455" className="block text-4xl md:text-5xl font-display text-primary hover:text-primary-dark transition-colors mb-4">
-                            +44 7782 214455
+                        <a href="tel:07782214455" className="block text-4xl md:text-5xl font-display text-primary hover:text-primary-dark transition-colors mb-4">
+                            07782 214455
                         </a>
                         <p className="text-sm font-medium text-text-light">Prompt: Try asking about a fuse board replacement</p>
                     </div>
@@ -255,7 +255,7 @@ export default function Home() {
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
                             <Button href="/pricing" variant="secondary-light" className="bg-white !text-primary hover:!bg-white/90 !border-transparent">Try It Free for 7 Days</Button>
-                            <Button href="/contact" variant="secondary-light">Book a 15-Min Demo</Button>
+                            <Button href="https://cal.com/antek-automation/30min" variant="secondary-light">Book a 15-Min Demo</Button>
                         </div>
                         <p className="text-sm font-medium text-white/50 tracking-wide">
                             No card required &middot; No contracts &middot; Cancel anytime

@@ -17,7 +17,7 @@ export default function BlogIndex() {
             <SEOHead
                 title="Trade Business Advice & Marketing Guides | AI Voice Agents"
                 description="Practical guides on getting more leads, SEO for tradesmen, Checkatrade reviews, and growing your UK home services business without burning out."
-                canonicalUrl="/blog"
+                path="/blog"
                 schema={schema}
             />
 

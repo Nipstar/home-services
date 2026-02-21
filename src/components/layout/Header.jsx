@@ -76,7 +76,7 @@ export default function Header() {
 
                 {/* Desktop CTA */}
                 <div className="hidden lg:block">
-                    <Button href="/pricing" variant="primary" className="py-2.5 px-6 shrink-0">Try Our AI &rarr;</Button>
+                    <Button href="/#demo" variant="primary" className="py-2.5 px-6 shrink-0">Try Our AI &rarr;</Button>
                 </div>
 
                 {/* Mobile menu button */}
@@ -114,7 +114,7 @@ export default function Header() {
                         <Link to="/missed-calls-costing-tradesmen-money" className="text-white/90">Missed Calls Stats</Link>
                     </nav>
                     <div className="mt-auto pt-8">
-                        <Button href="/pricing" className="w-full">Try Our AI &rarr;</Button>
+                        <Button href="/#demo" className="w-full">Try Our AI &rarr;</Button>
                     </div>
                 </div>
             )}

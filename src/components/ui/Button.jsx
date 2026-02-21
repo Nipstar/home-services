@@ -11,7 +11,7 @@ export default function Button({ variant = 'primary', children, href, className 
     const combinedClassName = `${base} ${variants[variant]} ${className}`;
 
     if (href) {
-        if (href.startsWith('http') || href.startsWith('tel:')) {
+        if (href.startsWith('http') || href.startsWith('tel:') || href.startsWith('/#')) {
             return <a href={href} className={combinedClassName} {...props}>{children}</a>;
         }
         return <Link to={href} className={combinedClassName} {...props}>{children}</Link>;

@@ -13,7 +13,7 @@ export default function AllTrades() {
             <SEOHead
                 title="AI Voice Agents for UK Tradespeople | All Supported Trades"
                 description="We build bespoke AI phone answering agents for plumbers, electricians, builders, roofers, and every other UK home service trade."
-                canonicalUrl="/trades"
+                path="/trades"
             />
 
             {/* Hero */}

@@ -101,7 +101,7 @@ export default function CompareTemplate({
                 <h2 className="text-white font-display text-4xl mb-8">Ready up upgrade your answering service?</h2>
                 <div className="flex justify-center gap-4">
                     <Button href="/pricing" variant="secondary-light" className="bg-white !text-primary hover:!bg-white/90">View Pricing</Button>
-                    <Button href="https://cal.com/antekautomation" variant="secondary">Book Demo</Button>
+                    <Button href="https://cal.com/antek-automation/30min" variant="secondary">Book Demo</Button>
                 </div>
             </SectionWrapper>
         </>

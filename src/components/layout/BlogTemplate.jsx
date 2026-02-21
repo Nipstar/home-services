@@ -20,8 +20,8 @@ export default function BlogTemplate({ post, children }) {
             <SEOHead
                 title={`${post.title} | AI Voice Agents for Home Services`}
                 description={post.excerpt}
-                canonicalUrl={`/blog/${post.slug}`}
-                type="Article"
+                path={`/blog/${post.slug}`}
+                ogType="article"
                 schema={schema}
             />
 

@@ -153,6 +153,45 @@ export default function TradeTemplate({ slug }) {
                 </div>
             </SectionWrapper>
 
+            {/* Live Demo */}
+            <SectionWrapper bg="accent" id="demo">
+                <div className="text-center max-w-3xl mx-auto mb-12">
+                    <OverlineTag>HEAR IT FOR YOURSELF</OverlineTag>
+                    <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-dark mb-6">
+                        Call Our Live AI Voice Agents
+                    </h2>
+                    <p className="text-lg text-dark/80">
+                        These are real AI voice agents we've built for UK trades businesses. Ring them up and see exactly what your customers will experience.
+                    </p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-8">
+                    <div className="bg-white p-8 rounded-2xl border border-primary/20 text-center shadow-lg hover:-translate-y-1 transition-transform">
+                        <OverlineTag className="bg-primary/5 text-primary">ELECTRICAL DEMO</OverlineTag>
+                        <h3 className="text-xl font-semibold mb-6">Bolt Electrical AI Reception</h3>
+                        <a href="tel:07782214455" className="block text-4xl md:text-5xl font-display text-primary hover:text-primary-dark transition-colors mb-4">
+                            07782 214455
+                        </a>
+                        <p className="text-sm font-medium text-text-light">Prompt: Try asking about a fuse board replacement</p>
+                    </div>
+
+                    <div className="bg-white p-8 rounded-2xl border border-primary/20 text-center shadow-lg hover:-translate-y-1 transition-transform">
+                        <OverlineTag className="bg-primary/5 text-primary">PLUMBING & HEATING DEMO</OverlineTag>
+                        <h3 className="text-xl font-semibold mb-6">Antek Plumbing & Heating AI Receptionist</h3>
+                        <a href="tel:03330510944" className="block text-4xl md:text-5xl font-display text-primary hover:text-primary-dark transition-colors mb-4">
+                            0333 051 0944
+                        </a>
+                        <p className="text-sm font-medium text-text-light">Prompt: Try booking a boiler service</p>
+                    </div>
+                </div>
+
+                <div className="text-center">
+                    <p className="text-sm text-dark/60">
+                        Calls are answered by AI 24/7. Give it a ring now and experience the difference.
+                    </p>
+                </div>
+            </SectionWrapper>
+
             {/* Related Trades */}
             <SectionWrapper bg="soft" className="border-t border-border">
                 <div className="max-w-6xl mx-auto">

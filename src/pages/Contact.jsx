@@ -37,8 +37,7 @@ export default function Contact() {
             setStatus('success');
             form.reset();
         } catch (error) {
-            console.error('Submission error:', error);
-            // Even if it "errors" in the browser due to CORS, n8n usually still receives the payload.
+            // Silent fail - even if it "errors" in the browser due to CORS, n8n usually still receives the payload.
             // For better UX during this constraint, we will show success to the user rather than a false negative.
             setStatus('success');
             form.reset();
@@ -75,7 +74,7 @@ export default function Contact() {
                             </div>
                             <div>
                                 <h3 className="font-bold text-dark text-lg mb-1">Company Details</h3>
-                                <p className="text-text">Built and managed by Antek Automation Ltd, Hampshire, UK.</p>
+                                <p className="text-text">Built and managed by Antek Automation, Hampshire, UK.</p>
                             </div>
                         </div>
                     </div>
