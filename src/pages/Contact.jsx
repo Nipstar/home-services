@@ -23,7 +23,7 @@ export default function Contact() {
         };
 
         try {
-            await fetch('https://antekauto.app.n8n.cloud/webhook-test/90d94d55-bb16-4201-9cd3-a594464f45be', {
+            await fetch('https://antekauto.app.n8n.cloud/webhook/90d94d55-bb16-4201-9cd3-a594464f45be', {
                 method: 'POST',
                 mode: 'no-cors',
                 headers: {
