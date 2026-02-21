@@ -12,8 +12,8 @@ export default function HowItWorks() {
             {
                 "@type": "BreadcrumbList",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aivoiceagentsforhomeservices.co.uk/" },
-                    { "@type": "ListItem", "position": 2, "name": "How It Works", "item": "https://aivoiceagentsforhomeservices.co.uk/how-ai-voice-agents-work" }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.aivoiceagentsforhomeservices.co.uk/" },
+                    { "@type": "ListItem", "position": 2, "name": "How It Works", "item": "https://www.aivoiceagentsforhomeservices.co.uk/how-ai-voice-agents-work" }
                 ]
             },
             {

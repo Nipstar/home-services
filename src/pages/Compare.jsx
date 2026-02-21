@@ -8,8 +8,8 @@ export default function Compare() {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aivoiceagentsforhomeservices.co.uk/" },
-            { "@type": "ListItem", "position": 2, "name": "Compare", "item": "https://aivoiceagentsforhomeservices.co.uk/ai-voice-agent-vs-call-centre" }
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.aivoiceagentsforhomeservices.co.uk/" },
+            { "@type": "ListItem", "position": 2, "name": "Compare", "item": "https://www.aivoiceagentsforhomeservices.co.uk/ai-voice-agent-vs-call-centre" }
         ]
     };
 

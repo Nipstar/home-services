@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 
 export default function SEOHead({ title, description, schema, path = '', ogType = 'website' }) {
-    const canonicalUrl = `https://aivoiceagentsforhomeservices.co.uk${path}`;
+    const canonicalUrl = `https://www.aivoiceagentsforhomeservices.co.uk${path}`;
 
     return (
         <Helmet>

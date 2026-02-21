@@ -12,8 +12,8 @@ export default function Pricing() {
             {
                 "@type": "BreadcrumbList",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aivoiceagentsforhomeservices.co.uk/" },
-                    { "@type": "ListItem", "position": 2, "name": "Pricing", "item": "https://aivoiceagentsforhomeservices.co.uk/pricing" }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.aivoiceagentsforhomeservices.co.uk/" },
+                    { "@type": "ListItem", "position": 2, "name": "Pricing", "item": "https://www.aivoiceagentsforhomeservices.co.uk/pricing" }
                 ]
             },
             {

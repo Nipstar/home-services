@@ -1,7 +1,7 @@
 # AI Voice Agents for Home Services - llms.txt
 
 ## Site Overview
-AI Voice Agents for Home Services (https://aivoiceagentsforhomeservices.co.uk) provides AI-powered phone answering services specifically designed for UK tradespeople and home service businesses. Built and managed by Antek Automation, Hampshire, UK.
+AI Voice Agents for Home Services (https://www.aivoiceagentsforhomeservices.co.uk) provides AI-powered phone answering services specifically designed for UK tradespeople and home service businesses. Built and managed by Antek Automation, Hampshire, UK.
 
 ## Primary Purpose
 Help UK tradespeople (plumbers, electricians, builders, etc.) capture every customer call 24/7 through AI voice agents, preventing lost revenue from missed calls while they're on the tools.

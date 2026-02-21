@@ -8,7 +8,7 @@ export default function PrivacyPolicy() {
                 <html lang="en-GB" />
                 <title>Privacy Policy | Antek Automation Ltd</title>
                 <meta name="description" content="Privacy Policy for AI Voice Agents for Home Services, powered by Antek Automation Ltd." />
-                <link rel="canonical" href="https://aivoiceagentsforhomeservices.co.uk/privacy-policy" />
+                <link rel="canonical" href="https://www.aivoiceagentsforhomeservices.co.uk/privacy-policy" />
             </Helmet>
 
             <SectionWrapper bg="white" className="pt-12 md:pt-20 pb-20 border-b border-border">

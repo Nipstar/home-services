@@ -20,9 +20,9 @@ export default function TradeTemplate({ slug }) {
             {
                 "@type": "BreadcrumbList",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aivoiceagentsforhomeservices.co.uk/" },
-                    { "@type": "ListItem", "position": 2, "name": "Trades", "item": "https://aivoiceagentsforhomeservices.co.uk/trades" },
-                    { "@type": "ListItem", "position": 3, "name": trade.name, "item": `https://aivoiceagentsforhomeservices.co.uk/ai-voice-agent-for-${slug}` }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.aivoiceagentsforhomeservices.co.uk/" },
+                    { "@type": "ListItem", "position": 2, "name": "Trades", "item": "https://www.aivoiceagentsforhomeservices.co.uk/trades" },
+                    { "@type": "ListItem", "position": 3, "name": trade.name, "item": `https://www.aivoiceagentsforhomeservices.co.uk/ai-voice-agent-for-${slug}` }
                 ]
             },
             {

@@ -50,7 +50,7 @@ export default function Contact() {
                 <html lang="en-GB" />
                 <title>Contact Us | AI Voice Agents for UK Trades</title>
                 <meta name="description" content="Get in touch to arrange a custom AI voice agent build for your UK trade business. Start catching every missed call today." />
-                <link rel="canonical" href="https://aivoiceagentsforhomeservices.co.uk/contact" />
+                <link rel="canonical" href="https://www.aivoiceagentsforhomeservices.co.uk/contact" />
             </Helmet>
 
             {/* Hero */}

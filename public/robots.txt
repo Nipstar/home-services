@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://aivoiceagentsforhomeservices.co.uk/sitemap.xml
+Sitemap: https://www.aivoiceagentsforhomeservices.co.uk/sitemap.xml
 
 # LLM-specific information for AI crawlers
 Allow: /llms.txt

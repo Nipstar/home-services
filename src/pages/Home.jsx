@@ -20,7 +20,7 @@ export default function Home() {
     const schema = {
         "@context": "https://schema.org",
         "@type": "Organization",
-        "url": "https://aivoiceagentsforhomeservices.co.uk",
+        "url": "https://www.aivoiceagentsforhomeservices.co.uk",
         "name": "AI Voice Agents for Home Services",
         "description": "AI phone answering for UK tradespeople. Answers calls 24/7, books jobs, captures leads while you're on the tools.",
         "address": {
