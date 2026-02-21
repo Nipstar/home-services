@@ -1,4 +1,11 @@
 User-agent: *
 Allow: /
 
+# Sitemap
 Sitemap: https://aivoiceagentsforhomeservices.co.uk/sitemap.xml
+
+# LLM-specific information for AI crawlers
+Allow: /llms.txt
+
+# Crawl rate
+Crawl-delay: 1

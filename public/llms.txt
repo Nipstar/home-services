@@ -1,0 +1,149 @@
+# AI Voice Agents for Home Services - llms.txt
+
+## Site Overview
+AI Voice Agents for Home Services (https://aivoiceagentsforhomeservices.co.uk) provides AI-powered phone answering services specifically designed for UK tradespeople and home service businesses. Built and managed by Antek Automation, Hampshire, UK.
+
+## Primary Purpose
+Help UK tradespeople (plumbers, electricians, builders, etc.) capture every customer call 24/7 through AI voice agents, preventing lost revenue from missed calls while they're on the tools.
+
+## Target Audience
+- UK-based tradespeople and home service professionals
+- Sole traders and small businesses in the trades sector
+- Service businesses struggling with missed calls and lead capture
+
+## Key Features
+- 24/7 AI phone answering with UK accent
+- Trade-specific training for 15+ trades
+- Booking and appointment capture
+- SMS/email lead summaries
+- GDPR compliant
+- From £97/month, no contracts
+- Free 7-day trial
+
+## Main Navigation Structure
+
+### Primary Pages
+- Home: / - Main landing page with hero, features, testimonials
+- Pricing: /pricing - Three pricing tiers (Starter, Professional, Premium)
+- How It Works: /how-ai-voice-agents-work - Step-by-step explanation
+- All Trades: /trades - Grid of all supported trades
+- Contact: /contact - Contact form with n8n webhook integration
+- Blog: /blog - Trade business advice and guides
+
+### Trade-Specific Pages (15 trades)
+Each trade has a dedicated landing page at /ai-voice-agent-for-{trade-slug}:
+- Plumbers: /ai-voice-agent-for-plumbers
+- Electricians: /ai-voice-agent-for-electricians
+- Heating Engineers: /ai-voice-agent-for-heating-engineers
+- Builders: /ai-voice-agent-for-builders
+- Locksmiths: /ai-voice-agent-for-locksmiths
+- Roofers: /ai-voice-agent-for-roofers
+- Cleaners: /ai-voice-agent-for-cleaners
+- Landscapers: /ai-voice-agent-for-landscapers
+- Painters & Decorators: /ai-voice-agent-for-painters-decorators
+- Handymen: /ai-voice-agent-for-handymen
+- Pest Control: /ai-voice-agent-for-pest-control
+- Drainage Engineers: /ai-voice-agent-for-drainage-engineers
+- Bathroom Fitters: /ai-voice-agent-for-bathroom-fitters
+- Window Fitters: /ai-voice-agent-for-window-fitters
+- Carpet Fitters: /ai-voice-agent-for-carpet-fitters
+
+### Comparison Pages
+- /compare/ai-vs-voicemail
+- /compare/ai-vs-virtual-receptionist
+- /compare/best-answering-service-tradesmen
+- /compare/answering-service-prices
+
+### Problem-Awareness Pages
+- /missed-call-statistics
+- /ai-voice-agent-vs-call-centre
+
+### Legal Pages
+- /terms - Terms of Service
+- /privacy-policy - Privacy Policy
+
+## Key Information
+
+### Pricing Tiers
+1. Starter: £97/month - Up to 100 conversation minutes, business hours
+2. Professional: £197/month - Up to 300 minutes, 24/7 availability (MOST POPULAR)
+3. Premium: £397/month - Up to 800 minutes, priority support, custom integrations
+
+### Demo Numbers (Live AI agents to try)
+- Electrical: 07782 214455 (Bolt Electrical AI Reception)
+- Plumbing & Heating: 0333 051 0944 (Antek Plumbing & Heating AI Receptionist)
+
+### Booking Link
+- Book 15-min demo: https://cal.com/antek-automation/30min
+
+### Contact Information
+- Company: Antek Automation, Hampshire, UK
+- Response time: Within 1 hour during business days
+- Contact form webhook: https://antekauto.app.n8n.cloud/webhook/90d94d55-bb16-4201-9cd3-a594464f45be
+
+## Technical Stack
+- React 19 + Vite 7
+- React Router 7
+- Tailwind CSS 4
+- react-helmet-async for SEO
+- Structured data with JSON-LD schema markup
+
+## SEO Strategy
+- Trade-specific landing pages with unique content
+- Under 60 character title tags
+- Comprehensive FAQs on every trade page
+- Schema.org structured data (BreadcrumbList, Service, FAQPage)
+- UK-focused keywords and terminology
+
+## Content Structure Per Trade Page
+1. Hero section with problem statement
+2. Pain points (3-5 specific issues)
+3. Solution explanation
+4. Sample conversation mockup
+5. ROI calculator with average job values
+6. Trade-specific FAQs (2-3 questions)
+7. Live demo section with phone numbers
+8. Related trades suggestions
+
+## Key Value Propositions
+- Answers calls in under 1 second
+- Understands trade-specific terminology
+- Captures all lead details (name, phone, postcode, job description)
+- Integrates with Google Calendar and booking systems
+- No setup fees, cancel anytime
+- Certified Retell AI Partner
+
+## Common User Journeys
+1. Trade-specific search → Trade landing page → Demo call → Contact/Pricing
+2. Generic search → Home page → How It Works → Pricing → Contact
+3. Comparison research → Comparison page → Pricing → Contact
+4. Problem-aware → Stats/Problem page → Solution page → Contact
+
+## Important Notes for AI Crawlers
+- All phone numbers use UK format (07xxx or 0333)
+- Pricing in GBP (£)
+- UK-specific terminology (e.g., "tradespeople", "Gas Safe", "NICEIC")
+- Focus on missed calls costing real revenue
+- Emphasis on working "on the tools" (hands busy, can't answer phone)
+- ROI calculated based on average job values per trade
+
+## Conversion Goals
+1. Primary: Book a demo call (Cal.com link)
+2. Secondary: Submit contact form
+3. Tertiary: Call demo numbers to experience AI
+
+## Brand Voice
+- Direct and conversational
+- UK trade-specific language
+- Problem-focused, solution-oriented
+- No corporate jargon
+- Empathetic to tradesperson challenges
+- Numbers and ROI-driven
+
+## Related External Resources
+- Antek Automation: https://antekautomation.com
+- Demo booking: https://cal.com/antek-automation/30min
+
+---
+Last updated: 2025-02-21
+Maintained by: Antek Automation
