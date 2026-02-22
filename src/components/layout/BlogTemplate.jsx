@@ -18,7 +18,7 @@ export default function BlogTemplate({ post, children }) {
     return (
         <>
             <SEOHead
-                title={`${post.title} | AI Voice Agents for Home Services`}
+                title={`${post.title} | AI Voice Agents`}
                 description={post.excerpt}
                 path={`/blog/${post.slug}`}
                 ogType="article"

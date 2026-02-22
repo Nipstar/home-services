@@ -7,4 +7,8 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  ssr: {
+    // Bundle all deps into the SSR output to avoid CJS/ESM mismatches
+    noExternal: true,
+  },
 })
