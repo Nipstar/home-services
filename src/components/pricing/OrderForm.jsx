@@ -119,7 +119,7 @@ export default function OrderForm({ selectedPlan, selectedAddons, initialTrade, 
     const total = calculateTotal(selectedPlan, selectedAddons);
 
     const inputClasses = (field) =>
-        `w-full px-4 py-3 rounded-lg border outline-none transition-all bg-surface-soft ${
+        `w-full px-4 py-3 rounded-lg border outline-none transition-colors bg-surface-soft ${
             errors[field]
                 ? 'border-red-400 focus:border-red-500 focus:ring-1 focus:ring-red-500'
                 : 'border-border focus:border-primary focus:ring-1 focus:ring-primary'
@@ -296,7 +296,7 @@ export default function OrderForm({ selectedPlan, selectedAddons, initialTrade, 
                         value={formData.notes}
                         onChange={handleChange}
                         rows="3"
-                        className="w-full px-4 py-3 rounded-lg border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all bg-surface-soft resize-none"
+                        className="w-full px-4 py-3 rounded-lg border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors bg-surface-soft resize-none"
                         placeholder="Tell us anything we should know..."
                     />
                 </div>

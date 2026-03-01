@@ -31,7 +31,7 @@ export default function Header() {
     ];
 
     return (
-        <header className={`sticky top-0 z-50 transition-all duration-300 bg-[#1A1A2E] border-b border-white/8 ${isScrolled ? 'backdrop-blur-md bg-[#1A1A2E]/90' : ''}`}>
+        <header className={`sticky top-0 z-50 transition-[background-color] duration-300 bg-[#1A1A2E] border-b border-white/8 ${isScrolled ? 'backdrop-blur-md bg-[#1A1A2E]/90' : ''}`}>
             <div className="max-w-7xl mx-auto px-5 md:px-8 h-20 flex items-center justify-between">
                 {/* Logo */}
                 <Link to="/" className="flex items-center gap-3 relative z-50">

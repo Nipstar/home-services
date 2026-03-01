@@ -24,7 +24,7 @@ export default function PlanSelector({ selectedPlan, onSelectPlan }) {
                             onSelectPlan(plan.id);
                             trackPlanSelected(plan.name, plan.price);
                         }}
-                        className={`relative rounded-3xl p-8 text-left flex flex-col transition-all duration-300 cursor-pointer ${
+                        className={`relative rounded-3xl p-8 text-left flex flex-col transition-[border-color,box-shadow,opacity,transform] duration-300 cursor-pointer ${
                             isSelected
                                 ? 'ring-[3px] ring-primary shadow-[0_0_24px_rgba(108,60,225,0.18)] scale-[1.02]'
                                 : 'opacity-[0.88] hover:opacity-100 hover:shadow-card-hover hover:-translate-y-0.5'
@@ -65,7 +65,7 @@ export default function PlanSelector({ selectedPlan, onSelectPlan }) {
                             </span>
                         </div>
 
-                        <div className={`w-full py-3 rounded-full font-semibold text-sm text-center transition-all mb-8 ${
+                        <div className={`w-full py-3 rounded-full font-semibold text-sm text-center transition-colors mb-8 ${
                             isSelected
                                 ? 'bg-gradient-to-r from-primary to-primary-light text-white shadow-cta'
                                 : isHighlighted

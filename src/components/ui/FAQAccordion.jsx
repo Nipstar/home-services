@@ -29,7 +29,7 @@ export default function FAQAccordion({ question, answer }) {
                     maxHeight: isOpen ? `${contentRef.current?.scrollHeight}px` : '0px',
                     opacity: isOpen ? 1 : 0
                 }}
-                className="overflow-hidden transition-all duration-300 ease-in-out"
+                className="overflow-hidden transition-[max-height,opacity] duration-300 ease-in-out"
             >
                 <div
                     className="pb-6 text-text leading-relaxed max-w-3xl"

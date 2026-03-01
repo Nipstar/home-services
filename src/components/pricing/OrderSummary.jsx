@@ -66,7 +66,7 @@ export default function OrderSummary({ selectedPlan, selectedAddons, onScrollToF
             <button
                 type="button"
                 onClick={onScrollToForm}
-                className="w-full bg-gradient-to-r from-primary to-primary-light text-white font-semibold rounded-full py-4 shadow-cta hover:shadow-[0_6px_20px_rgba(108,60,225,0.4)] hover:-translate-y-0.5 transition-all cursor-pointer"
+                className="w-full bg-gradient-to-r from-primary to-primary-light text-white font-semibold rounded-full py-4 shadow-cta hover:shadow-[0_6px_20px_rgba(108,60,225,0.4)] hover:-translate-y-0.5 transition-[box-shadow,transform] cursor-pointer"
             >
                 Continue to Details &darr;
             </button>

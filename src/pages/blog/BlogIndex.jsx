@@ -41,7 +41,7 @@ export default function BlogIndex() {
                         <Link
                             key={post.id}
                             to={`/blog/${post.slug}`}
-                            className="group flex flex-col h-full bg-white border border-border rounded-2xl p-6 hover:-translate-y-2 hover:shadow-card-hover transition-all duration-300"
+                            className="group flex flex-col h-full bg-white border border-border rounded-2xl p-6 hover:-translate-y-2 hover:shadow-card-hover transition-[box-shadow,transform] duration-300"
                         >
                             <div className="flex items-center gap-3 mb-4">
                                 <span className="text-xs font-bold px-3 py-1 bg-surface-accent text-primary rounded-full tracking-wide uppercase">

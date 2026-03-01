@@ -95,22 +95,22 @@ export default function Contact() {
                                 <div className="grid md:grid-cols-2 gap-6">
                                     <div className="space-y-2">
                                         <label htmlFor="name" className="block text-sm font-semibold text-dark">Full Name *</label>
-                                        <input required type="text" id="name" name="name" className="w-full px-4 py-3 rounded-lg border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all bg-surface-soft" placeholder="John Smith" />
+                                        <input required type="text" id="name" name="name" className="w-full px-4 py-3 rounded-lg border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors bg-surface-soft" placeholder="John Smith" />
                                     </div>
                                     <div className="space-y-2">
                                         <label htmlFor="phone" className="block text-sm font-semibold text-dark">Phone Number *</label>
-                                        <input required type="tel" id="phone" name="phone" className="w-full px-4 py-3 rounded-lg border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all bg-surface-soft" placeholder="07700 900123" />
+                                        <input required type="tel" id="phone" name="phone" className="w-full px-4 py-3 rounded-lg border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors bg-surface-soft" placeholder="07700 900123" />
                                     </div>
                                 </div>
 
                                 <div className="space-y-2">
                                     <label htmlFor="email" className="block text-sm font-semibold text-dark">Email Address *</label>
-                                    <input required type="email" id="email" name="email" className="w-full px-4 py-3 rounded-lg border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all bg-surface-soft" placeholder="john@example.com" />
+                                    <input required type="email" id="email" name="email" className="w-full px-4 py-3 rounded-lg border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors bg-surface-soft" placeholder="john@example.com" />
                                 </div>
 
                                 <div className="space-y-2">
                                     <label htmlFor="trade" className="block text-sm font-semibold text-dark">Your Trade</label>
-                                    <select id="trade" name="trade" className="w-full px-4 py-3 rounded-lg border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all bg-surface-soft text-dark">
+                                    <select id="trade" name="trade" className="w-full px-4 py-3 rounded-lg border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors bg-surface-soft text-dark">
                                         <option value="">Please select...</option>
                                         <option value="Plumbing">Plumbing</option>
                                         <option value="Electrical">Electrical</option>
@@ -123,7 +123,7 @@ export default function Contact() {
 
                                 <div className="space-y-2">
                                     <label htmlFor="message" className="block text-sm font-semibold text-dark">How can we help? (Optional)</label>
-                                    <textarea id="message" name="message" rows="4" className="w-full px-4 py-3 rounded-lg border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all bg-surface-soft resize-none" placeholder="Tell us about your business or specific problems you're having with missed calls..."></textarea>
+                                    <textarea id="message" name="message" rows="4" className="w-full px-4 py-3 rounded-lg border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors bg-surface-soft resize-none" placeholder="Tell us about your business or specific problems you're having with missed calls..."></textarea>
                                 </div>
 
                                 {status === 'error' && (
@@ -135,7 +135,7 @@ export default function Contact() {
                                 <button
                                     type="submit"
                                     disabled={status === 'submitting'}
-                                    className="w-full bg-gradient-to-r from-primary to-primary-light text-white font-semibold text-lg rounded-full py-4 shadow-cta hover:shadow-[0_6px_20px_rgba(108,60,225,0.4)] hover:-translate-y-0.5 transition-all disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
+                                    className="w-full bg-gradient-to-r from-primary to-primary-light text-white font-semibold text-lg rounded-full py-4 shadow-cta hover:shadow-[0_6px_20px_rgba(108,60,225,0.4)] hover:-translate-y-0.5 transition-[box-shadow,transform] disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
                                 >
                                     {status === 'submitting' ? 'Sending...' : 'Request Info'}
                                 </button>

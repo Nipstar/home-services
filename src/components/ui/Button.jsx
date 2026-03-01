@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 export default function Button({ variant = 'primary', children, href, className = '', ...props }) {
-    const base = 'inline-flex items-center justify-center font-semibold text-[0.9375rem] rounded-full px-8 py-3 transition-all duration-200';
+    const base = 'inline-flex items-center justify-center font-semibold text-[0.9375rem] rounded-full px-8 py-3 transition-[background-color,color,box-shadow,border-color,transform] duration-200';
     const variants = {
         primary: 'bg-gradient-to-r from-primary to-primary-light text-white shadow-cta hover:shadow-[0_6px_20px_rgba(108,60,225,0.4)] hover:-translate-y-0.5',
         secondary: 'border-[1.5px] border-border text-dark hover:border-primary hover:text-primary bg-white',

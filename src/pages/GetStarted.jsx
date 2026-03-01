@@ -215,6 +215,7 @@ export default function GetStarted() {
                 </div>
             </div>
 
+            <main>
             {/* ─── Hero Section ───────────────────────────────── */}
             <section className="bg-gradient-to-br from-white via-[#f8f7ff] to-white py-16 md:py-24 overflow-hidden">
                 <div className="max-w-7xl mx-auto px-5 md:px-8">
@@ -229,7 +230,7 @@ export default function GetStarted() {
                             <button
                                 type="button"
                                 onClick={scrollToPlans}
-                                className="bg-gradient-to-r from-primary to-primary-light text-white font-semibold rounded-full px-10 py-4 shadow-cta hover:shadow-[0_6px_20px_rgba(108,60,225,0.4)] hover:-translate-y-0.5 transition-all cursor-pointer text-lg mb-4"
+                                className="bg-gradient-to-r from-primary to-primary-light text-white font-semibold rounded-full px-10 py-4 shadow-cta hover:shadow-[0_6px_20px_rgba(108,60,225,0.4)] hover:-translate-y-0.5 transition-[box-shadow,transform] cursor-pointer text-lg mb-4"
                             >
                                 See Plans & Pricing &darr;
                             </button>
@@ -281,7 +282,7 @@ export default function GetStarted() {
                                 text: 'Captures name, number, postcode, urgency — texts you the details instantly.',
                             },
                         ].map((benefit, i) => (
-                            <div key={i} className="text-center p-8 rounded-2xl bg-surface-soft border border-border hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300">
+                            <div key={i} className="text-center p-8 rounded-2xl bg-surface-soft border border-border hover:shadow-card-hover hover:-translate-y-1 transition-[box-shadow,transform] duration-300">
                                 <benefit.icon className="w-16 h-16 mx-auto mb-5" />
                                 <h2 className="font-display text-xl text-dark mb-3">{benefit.title}</h2>
                                 <p className="text-text text-sm leading-relaxed">{benefit.text}</p>
@@ -481,7 +482,7 @@ export default function GetStarted() {
                             </p>
                             <a
                                 href="tel:03330389960"
-                                className="inline-flex items-center gap-2 bg-white text-primary font-semibold rounded-full px-10 py-4 hover:bg-white/90 transition-all text-lg shadow-lg mb-4"
+                                className="inline-flex items-center gap-2 bg-white text-primary font-semibold rounded-full px-10 py-4 hover:bg-white/90 transition-colors text-lg shadow-lg mb-4"
                             >
                                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
                                 Call Us: 0333 038 9960
@@ -499,6 +500,7 @@ export default function GetStarted() {
                     </div>
                 </div>
             </section>
+            </main>
 
             {/* ─── Minimal Footer ─────────────────────────────── */}
             <div className="bg-[#1A1A2E] text-white/80 py-6 text-center text-sm">

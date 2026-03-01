@@ -21,7 +21,7 @@ export default function AddonSelector({ selectedAddons, onToggleExtraMinutes, on
                             trackAddonSelected('Extra 100 Minutes', addons.extraMinutes.price);
                         }
                     }}
-                    className={`w-full flex items-center justify-between p-5 rounded-2xl border-2 border-dashed transition-all cursor-pointer text-left ${
+                    className={`w-full flex items-center justify-between p-5 rounded-2xl border-2 border-dashed transition-[border-color,background-color] cursor-pointer text-left ${
                         selectedAddons.extraMinutes
                             ? 'border-primary bg-primary/5 shadow-sm'
                             : 'border-border bg-white hover:border-primary/40'
@@ -85,7 +85,7 @@ export default function AddonSelector({ selectedAddons, onToggleExtraMinutes, on
                                     onSelectChatbotTier(tier.id);
                                     trackAddonSelected(tier.name, tier.price);
                                 }}
-                                className={`relative rounded-xl p-5 text-left flex flex-col transition-all cursor-pointer ${
+                                className={`relative rounded-xl p-5 text-left flex flex-col transition-[border-color,background-color,box-shadow] cursor-pointer ${
                                     isSelected
                                         ? 'ring-2 ring-primary shadow-md bg-white border-transparent'
                                         : isIntegrated

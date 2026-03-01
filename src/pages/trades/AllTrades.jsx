@@ -38,7 +38,7 @@ export default function AllTrades() {
                             <Link
                                 key={trade.slug}
                                 to={`/ai-voice-agent-for-${trade.slug}`}
-                                className="group relative overflow-hidden bg-white border border-border rounded-2xl p-8 hover:-translate-y-1.5 hover:shadow-card-hover transition-all duration-300"
+                                className="group relative overflow-hidden bg-white border border-border rounded-2xl p-8 hover:-translate-y-1.5 hover:shadow-card-hover transition-[box-shadow,transform] duration-300"
                             >
                                 {/* Top border accent line */}
                                 <div

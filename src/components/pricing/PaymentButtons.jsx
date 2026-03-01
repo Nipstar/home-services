@@ -35,7 +35,7 @@ export default function PaymentButtons({ selectedPlan, selectedAddons, onPay, di
                 type="button"
                 onClick={() => handlePay('stripe')}
                 disabled={isDisabled}
-                className="w-full bg-gradient-to-r from-primary to-primary-light text-white font-semibold rounded-full py-4 text-base shadow-cta hover:shadow-[0_6px_20px_rgba(108,60,225,0.4)] hover:-translate-y-0.5 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none cursor-pointer flex items-center justify-center gap-2"
+                className="w-full bg-gradient-to-r from-primary to-primary-light text-white font-semibold rounded-full py-4 text-base shadow-cta hover:shadow-[0_6px_20px_rgba(108,60,225,0.4)] hover:-translate-y-0.5 transition-[box-shadow,transform] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none cursor-pointer flex items-center justify-center gap-2"
             >
                 {isLoading === 'stripe' ? (
                     <span className="flex items-center gap-2">{spinner} Redirecting to Stripe...</span>
@@ -56,7 +56,7 @@ export default function PaymentButtons({ selectedPlan, selectedAddons, onPay, di
                 type="button"
                 onClick={() => handlePay('paypal')}
                 disabled={isDisabled}
-                className="w-full bg-[#FFC439] text-[#253B80] font-bold rounded-full py-4 text-base hover:bg-[#F0B72A] hover:-translate-y-0.5 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none cursor-pointer flex items-center justify-center gap-2 border border-[#FFC439]/80"
+                className="w-full bg-[#FFC439] text-[#253B80] font-bold rounded-full py-4 text-base hover:bg-[#F0B72A] hover:-translate-y-0.5 transition-[background-color,transform] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none cursor-pointer flex items-center justify-center gap-2 border border-[#FFC439]/80"
             >
                 {isLoading === 'paypal' ? (
                     <span className="flex items-center gap-2">{spinner} Redirecting to PayPal...</span>
