@@ -85,7 +85,7 @@ export default function Footer() {
 
                 {/* Bottom bar */}
                 <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs md:text-sm">
-                    <p>&copy; {new Date().getFullYear()} Antek Automation Ltd.</p>
+                    <p>&copy; {new Date().getFullYear()} Antek Automation.</p>
                     <div className="flex flex-wrap justify-center gap-4 gap-y-2">
                         <span className="flex items-center gap-1.5"><span className="text-primary-light">⭐</span> Certified Retell AI Partner</span>
                         <span className="hidden md:inline text-white/20">|</span>

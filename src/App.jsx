@@ -13,6 +13,8 @@ import Compare from './pages/Compare';
 import MissedCallsStats from './pages/MissedCallsStats';
 import NotFound from './pages/NotFound';
 import Contact from './pages/Contact';
+import GetStarted from './pages/GetStarted';
+import OrderConfirmed from './pages/OrderConfirmed';
 
 // Legal Pages
 import PrivacyPolicy from './pages/legal/PrivacyPolicy';
@@ -60,74 +62,90 @@ import CheckatradeVsMyBuilder from './pages/blog/CheckatradeVsMyBuilder';
 import BusiestMonths from './pages/blog/BusiestMonths';
 import GrowTradeBusinessNoStaff from './pages/blog/GrowTradeBusinessNoStaff';
 
+// Layout wrapper for standard pages (with header, footer, mobile CTA)
+function MainLayout({ children }) {
+  return (
+    <div className="flex flex-col min-h-screen">
+      <Header />
+      <main className="flex-grow">{children}</main>
+      <Footer />
+      <MobileCTA />
+    </div>
+  );
+}
+
 export function AppContent() {
   return (
     <>
       <ScrollToTop />
-      <div className="flex flex-col min-h-screen">
-        <Header />
-        <main className="flex-grow">
-          <Routes>
-            {/* Core Routing */}
-            <Route path="/" element={<Home />} />
-            <Route path="/how-ai-voice-agents-work" element={<HowItWorks />} />
-            <Route path="/pricing" element={<Pricing />} />
-            <Route path="/ai-voice-agent-vs-call-centre" element={<Compare />} />
-            <Route path="/missed-calls-costing-tradesmen-money" element={<MissedCallsStats />} />
-            <Route path="/trades" element={<AllTrades />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="/terms" element={<TermsOfService />} />
+      <Routes>
+        {/* Standalone pages — own layout, no nav/footer */}
+        <Route path="/get-started" element={<GetStarted />} />
+        <Route path="/order-confirmed" element={<OrderConfirmed />} />
 
-            {/* Trade Routing */}
-            <Route path="/ai-voice-agent-for-plumbers" element={<Plumbers />} />
-            <Route path="/ai-voice-agent-for-electricians" element={<Electricians />} />
-            <Route path="/ai-voice-agent-for-heating-engineers" element={<HeatingEngineers />} />
-            <Route path="/ai-voice-agent-for-builders" element={<Builders />} />
-            <Route path="/ai-voice-agent-for-locksmiths" element={<Locksmiths />} />
-            <Route path="/ai-voice-agent-for-roofers" element={<Roofers />} />
-            <Route path="/ai-voice-agent-for-cleaners" element={<Cleaners />} />
-            <Route path="/ai-voice-agent-for-landscapers" element={<Landscapers />} />
-            <Route path="/ai-voice-agent-for-painters-decorators" element={<PaintersDecorators />} />
-            <Route path="/ai-voice-agent-for-handymen" element={<Handymen />} />
-            <Route path="/ai-voice-agent-for-pest-control" element={<PestControl />} />
-            <Route path="/ai-voice-agent-for-drainage-engineers" element={<DrainageEngineers />} />
-            <Route path="/ai-voice-agent-for-bathroom-fitters" element={<BathroomFitters />} />
-            <Route path="/ai-voice-agent-for-window-fitters" element={<WindowFitters />} />
-            <Route path="/ai-voice-agent-for-carpet-fitters" element={<CarpetFitters />} />
+        {/* All standard pages wrapped in MainLayout */}
+        <Route path="*" element={
+          <MainLayout>
+            <Routes>
+              {/* Core Routing */}
+              <Route path="/" element={<Home />} />
+              <Route path="/how-ai-voice-agents-work" element={<HowItWorks />} />
+              <Route path="/pricing" element={<Pricing />} />
+              <Route path="/ai-voice-agent-vs-call-centre" element={<Compare />} />
+              <Route path="/missed-calls-costing-tradesmen-money" element={<MissedCallsStats />} />
+              <Route path="/trades" element={<AllTrades />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms" element={<TermsOfService />} />
 
-            {/* Problem Routing */}
-            <Route path="/after-hours-calls-tradesmen" element={<AfterHoursCalls />} />
-            <Route path="/voicemail-killing-your-trade-business" element={<VoicemailDead />} />
-            <Route path="/cant-answer-phone-on-the-job" element={<CantAnswerOnJob />} />
-            <Route path="/too-busy-to-answer-phone-tradesman" element={<TooBusyToAnswer />} />
-            <Route path="/customer-expects-instant-response" element={<CustomerExpectsInstant />} />
-            <Route path="/weekend-emergency-calls-tradesmen" element={<WeekendEmergencyCalls />} />
-            <Route path="/phone-tag-losing-customers" element={<PhoneTag />} />
-            <Route path="/checkatrade-leads-missing-calls" element={<CheckatradeLeadsMissing />} />
+              {/* Trade Routing */}
+              <Route path="/ai-voice-agent-for-plumbers" element={<Plumbers />} />
+              <Route path="/ai-voice-agent-for-electricians" element={<Electricians />} />
+              <Route path="/ai-voice-agent-for-heating-engineers" element={<HeatingEngineers />} />
+              <Route path="/ai-voice-agent-for-builders" element={<Builders />} />
+              <Route path="/ai-voice-agent-for-locksmiths" element={<Locksmiths />} />
+              <Route path="/ai-voice-agent-for-roofers" element={<Roofers />} />
+              <Route path="/ai-voice-agent-for-cleaners" element={<Cleaners />} />
+              <Route path="/ai-voice-agent-for-landscapers" element={<Landscapers />} />
+              <Route path="/ai-voice-agent-for-painters-decorators" element={<PaintersDecorators />} />
+              <Route path="/ai-voice-agent-for-handymen" element={<Handymen />} />
+              <Route path="/ai-voice-agent-for-pest-control" element={<PestControl />} />
+              <Route path="/ai-voice-agent-for-drainage-engineers" element={<DrainageEngineers />} />
+              <Route path="/ai-voice-agent-for-bathroom-fitters" element={<BathroomFitters />} />
+              <Route path="/ai-voice-agent-for-window-fitters" element={<WindowFitters />} />
+              <Route path="/ai-voice-agent-for-carpet-fitters" element={<CarpetFitters />} />
 
-            {/* Compare Routing */}
-            <Route path="/compare/ai-vs-virtual-receptionist" element={<AIvsVirtualReceptionist />} />
-            <Route path="/compare/ai-vs-voicemail" element={<AIvsVoicemail />} />
-            <Route path="/compare/answering-service-prices" element={<AnsweringServicePrices />} />
-            <Route path="/compare/best-answering-service-tradesmen" element={<BestAnsweringServiceTradesmen />} />
+              {/* Problem Routing */}
+              <Route path="/after-hours-calls-tradesmen" element={<AfterHoursCalls />} />
+              <Route path="/voicemail-killing-your-trade-business" element={<VoicemailDead />} />
+              <Route path="/cant-answer-phone-on-the-job" element={<CantAnswerOnJob />} />
+              <Route path="/too-busy-to-answer-phone-tradesman" element={<TooBusyToAnswer />} />
+              <Route path="/customer-expects-instant-response" element={<CustomerExpectsInstant />} />
+              <Route path="/weekend-emergency-calls-tradesmen" element={<WeekendEmergencyCalls />} />
+              <Route path="/phone-tag-losing-customers" element={<PhoneTag />} />
+              <Route path="/checkatrade-leads-missing-calls" element={<CheckatradeLeadsMissing />} />
 
-            {/* Blog Routing */}
-            <Route path="/blog" element={<BlogIndex />} />
-            <Route path="/blog/how-to-get-more-plumbing-leads-uk" element={<MorePlumbingLeads />} />
-            <Route path="/blog/google-business-profile-setup-tradesmen" element={<GoogleBusinessProfile />} />
-            <Route path="/blog/checkatrade-vs-mybuilder-vs-rated-people" element={<CheckatradeVsMyBuilder />} />
-            <Route path="/blog/busiest-months-uk-trades" element={<BusiestMonths />} />
-            <Route path="/blog/grow-trade-business-no-staff" element={<GrowTradeBusinessNoStaff />} />
+              {/* Compare Routing */}
+              <Route path="/compare/ai-vs-virtual-receptionist" element={<AIvsVirtualReceptionist />} />
+              <Route path="/compare/ai-vs-voicemail" element={<AIvsVoicemail />} />
+              <Route path="/compare/answering-service-prices" element={<AnsweringServicePrices />} />
+              <Route path="/compare/best-answering-service-tradesmen" element={<BestAnsweringServiceTradesmen />} />
 
-            {/* Fallback 404 */}
-            <Route path="/404" element={<NotFound />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </main>
-        <Footer />
-        <MobileCTA />
-      </div>
+              {/* Blog Routing */}
+              <Route path="/blog" element={<BlogIndex />} />
+              <Route path="/blog/how-to-get-more-plumbing-leads-uk" element={<MorePlumbingLeads />} />
+              <Route path="/blog/google-business-profile-setup-tradesmen" element={<GoogleBusinessProfile />} />
+              <Route path="/blog/checkatrade-vs-mybuilder-vs-rated-people" element={<CheckatradeVsMyBuilder />} />
+              <Route path="/blog/busiest-months-uk-trades" element={<BusiestMonths />} />
+              <Route path="/blog/grow-trade-business-no-staff" element={<GrowTradeBusinessNoStaff />} />
+
+              {/* Fallback 404 */}
+              <Route path="/404" element={<NotFound />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </MainLayout>
+        } />
+      </Routes>
     </>
   );
 }

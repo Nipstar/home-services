@@ -10,11 +10,13 @@ import TradeCard from '../components/ui/TradeCard';
 import StatCard from '../components/ui/StatCard';
 import StepCard from '../components/ui/StepCard';
 import TestimonialCard from '../components/ui/TestimonialCard';
+import DemoSection from '../components/ui/DemoSection';
 import { features } from '../data/features';
 import { trades } from '../data/trades';
 import { testimonials } from '../data/testimonials';
 import { stats } from '../data/stats';
 import { MoreTradesIcon } from '../components/svg/TradeIcons';
+import PremiumTrustBadges from '../components/ui/PremiumTrustBadges';
 
 export default function Home() {
     const schema = {
@@ -49,15 +51,16 @@ export default function Home() {
                         <p className="text-text text-lg mb-8 leading-relaxed max-w-xl">
                             Not anymore. AI voice agents built specifically for UK tradespeople — plumbers, sparks, heating engineers, builders, and every trade in between.
                         </p>
-                        <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                            <Button href="#demo" variant="primary">Hear Our AI In Action &rarr;</Button>
-                            <Button href="/how-ai-voice-agents-work" variant="secondary">See How It Works</Button>
+                        <div className="flex flex-col sm:flex-row gap-4 mb-4">
+                            <Button href="/pricing" variant="primary">See Plans & Pricing &rarr;</Button>
+                            <Button href="#demo" variant="secondary">Hear Our AI In Action</Button>
                         </div>
-                        <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs font-semibold text-text-light uppercase tracking-wider">
-                            <span className="flex items-center gap-1.5"><span className="text-success text-base">🛡️</span> GDPR Compliant</span>
-                            <span className="flex items-center gap-1.5"><span className="text-primary text-base">📞</span> UK Voice & Number</span>
-                            <span className="flex items-center gap-1.5"><span className="text-coral text-base">🔓</span> No Contracts</span>
-                            <span className="flex items-center gap-1.5"><span className="text-warning text-base">⭐</span> Certified Retell AI Partner</span>
+                        <p className="text-sm text-text-light font-medium mb-8">
+                            Starting from £97/month &middot; No contracts &middot; Live in 24 hours
+                        </p>
+
+                        <div className="mt-8 pt-6 border-t border-gray-100">
+                            <PremiumTrustBadges />
                         </div>
                     </div>
                     <div className="lg:pl-8 flex justify-center lg:justify-end">
@@ -204,39 +207,7 @@ export default function Home() {
 
             {/* Live Demo */}
             <SectionWrapper bg="accent" id="demo">
-                <div className="text-center max-w-3xl mx-auto mb-12">
-                    <OverlineTag>HEAR IT FOR YOURSELF</OverlineTag>
-                    <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-dark mb-6">
-                        Call Our Live AI Voice Agents
-                    </h2>
-                    <p className="text-lg text-dark/80">
-                        These are real AI voice agents we've built for UK trades businesses. Ring them up and see exactly what your customers will experience.
-                    </p>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-8">
-                    <div className="bg-white p-8 rounded-2xl border border-primary/20 text-center shadow-lg hover:-translate-y-1 transition-transform">
-                        <OverlineTag className="bg-primary/5 text-primary">ELECTRICAL DEMO</OverlineTag>
-                        <h3 className="text-xl font-semibold mb-6">Bolt Electrical AI Reception</h3>
-                        <a href="tel:07782214455" className="block text-4xl md:text-5xl font-display text-primary hover:text-primary-dark transition-colors mb-4">
-                            07782 214455
-                        </a>
-                        <p className="text-sm font-medium text-text-light">Prompt: Try asking about a fuse board replacement</p>
-                    </div>
-
-                    <div className="bg-white p-8 rounded-2xl border border-primary/20 text-center shadow-lg hover:-translate-y-1 transition-transform">
-                        <OverlineTag className="bg-primary/5 text-primary">PLUMBING & HEATING DEMO</OverlineTag>
-                        <h3 className="text-xl font-semibold mb-6">Antek Plumbing & Heating AI Receptionist</h3>
-                        <a href="tel:03330510944" className="block text-4xl md:text-5xl font-display text-primary hover:text-primary-dark transition-colors mb-4">
-                            0333 051 0944
-                        </a>
-                        <p className="text-sm font-medium text-text-light">Prompt: Try booking a boiler service</p>
-                    </div>
-                </div>
-
-                <p className="text-center text-sm font-semibold text-primary/60 uppercase tracking-widest">
-                    Available 24/7 &middot; Powered by Retell AI &middot; Demo calls
-                </p>
+                <DemoSection />
             </SectionWrapper>
 
             {/* Final CTA */}

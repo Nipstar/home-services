@@ -6,8 +6,8 @@ export default function PrivacyPolicy() {
         <>
             <Helmet>
                 <html lang="en-GB" />
-                <title>Privacy Policy | Antek Automation Ltd</title>
-                <meta name="description" content="Privacy Policy for AI Voice Agents for Home Services, powered by Antek Automation Ltd." />
+                <title>Privacy Policy | Antek Automation</title>
+                <meta name="description" content="Privacy Policy for AI Voice Agents for Home Services, powered by Antek Automation." />
                 <link rel="canonical" href="https://www.aivoiceagentsforhomeservices.co.uk/privacy-policy" />
             </Helmet>
 
@@ -18,7 +18,7 @@ export default function PrivacyPolicy() {
 
                     <h2>1. Introduction</h2>
                     <p>
-                        Welcome to AI Voice Agents for Home Services ("we," "our," or "us"), a trading name of Antek Automation Ltd.
+                        Welcome to AI Voice Agents for Home Services ("we," "our," or "us"), a trading name of Antek Automation.
                         We respect your privacy and are committed to protecting your personal data in accordance with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.
                     </p>
                     <p>
@@ -69,7 +69,7 @@ export default function PrivacyPolicy() {
                     <h2>7. Contact Us</h2>
                     <p>
                         If you have any questions about this Privacy Policy or our privacy practices, please contact us at:<br />
-                        <strong>Antek Automation Ltd</strong><br />
+                        <strong>Antek Automation</strong><br />
                         Hampshire, United Kingdom<br />
                         Email: info@antekautomation.com
                     </p>

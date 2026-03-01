@@ -1,11 +1,130 @@
+import { useState, useEffect, useCallback } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import SEOHead from '../components/layout/SEOHead';
 import SectionWrapper from '../components/ui/SectionWrapper';
 import FAQAccordion from '../components/ui/FAQAccordion';
-import Button from '../components/ui/Button';
 import OverlineTag from '../components/ui/OverlineTag';
+import PlanSelector from '../components/pricing/PlanSelector';
+import FeatureComparison from '../components/pricing/FeatureComparison';
+import AddonSelector from '../components/pricing/AddonSelector';
+import OrderSummary, { MobileOrderBar } from '../components/pricing/OrderSummary';
+import OrderForm from '../components/pricing/OrderForm';
+import PaymentButtons from '../components/pricing/PaymentButtons';
 import { pricingFaqs } from '../data/faqs';
+import { plans, getStripeLineItems, paypalPlanIds, calculateTotal } from '../data/pricing';
+import { getUtmParams, captureUtmParams } from '../utils/tracking';
 
 export default function Pricing() {
+    const [searchParams] = useSearchParams();
+    const initialTrade = searchParams.get('trade') || '';
+    const wasCancelled = searchParams.get('cancelled') === 'true';
+
+    const [selectedPlan, setSelectedPlan] = useState('professional');
+    const [selectedAddons, setSelectedAddons] = useState({
+        extraMinutes: false,
+        chatbotTier: null,
+    });
+    const [formError, setFormError] = useState('');
+
+    useEffect(() => {
+        captureUtmParams();
+    }, []);
+
+    const scrollToForm = () => {
+        const el = document.getElementById('order-form');
+        if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            setTimeout(() => {
+                const firstInput = el.querySelector('input, select');
+                firstInput?.focus();
+            }, 600);
+        }
+    };
+
+    const handleFormSubmit = useCallback(async (formData) => {
+        setFormError('');
+        const utm = getUtmParams();
+
+        if (formData.paymentMethod === 'stripe') {
+            try {
+                const CHECKOUT_ENDPOINT = import.meta.env.VITE_CHECKOUT_ENDPOINT || '/api/create-checkout-session';
+                const lineItems = getStripeLineItems(selectedPlan, selectedAddons);
+                const plan = plans.find(p => p.id === selectedPlan);
+
+                const total = calculateTotal(selectedPlan, selectedAddons);
+                const response = await fetch(CHECKOUT_ENDPOINT, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        planPriceId: plan?.stripePriceId,
+                        addonPriceIds: lineItems.slice(1).map(i => i.price),
+                        customerName: formData.name,
+                        customerEmail: formData.email,
+                        businessName: formData.businessName,
+                        trade: formData.trade,
+                        phone: formData.phone,
+                        postcode: formData.postcode,
+                        callsPerDay: formData.callsPerDay,
+                        notes: formData.notes,
+                        website: formData.website,
+                        planName: plan?.name,
+                        totalAmount: total,
+                        addonDetails: { extraMinutes: selectedAddons.extraMinutes, chatbotTier: selectedAddons.chatbotTier },
+                        utm,
+                    }),
+                });
+
+                const data = await response.json();
+                if (data.url) {
+                    window.location.href = data.url;
+                } else {
+                    setFormError('Something went wrong creating your checkout session. Please try again or contact us.');
+                }
+            } catch {
+                setFormError('Unable to connect to payment service. Please try again or contact us on 0333 038 9960.');
+            }
+        } else if (formData.paymentMethod === 'paypal') {
+            const planId = paypalPlanIds[selectedPlan];
+            if (!planId) {
+                setFormError('PayPal is not yet configured for this plan. Please use card payment or contact us.');
+                return;
+            }
+            try {
+                const ppPlan = plans.find(p => p.id === selectedPlan);
+                const ppTotal = calculateTotal(selectedPlan, selectedAddons);
+                const response = await fetch('/api/create-paypal-subscription', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        planId,
+                        totalAmount: ppTotal,
+                        customerName: formData.name,
+                        customerEmail: formData.email,
+                        businessName: formData.businessName,
+                        trade: formData.trade,
+                        phone: formData.phone,
+                        postcode: formData.postcode,
+                        website: formData.website,
+                        callsPerDay: formData.callsPerDay,
+                        notes: formData.notes,
+                        planName: ppPlan?.name,
+                        addonDetails: { extraMinutes: selectedAddons.extraMinutes, chatbotTier: selectedAddons.chatbotTier },
+                        utm,
+                    }),
+                });
+
+                const data = await response.json();
+                if (data.url) {
+                    window.location.href = data.url;
+                } else {
+                    setFormError('Something went wrong creating your PayPal subscription. Please try again or contact us.');
+                }
+            } catch {
+                setFormError('Unable to connect to PayPal. Please try again or contact us on 0333 038 9960.');
+            }
+        }
+    }, [selectedPlan, selectedAddons]);
+
     const schema = {
         "@context": "https://schema.org",
         "@graph": [
@@ -17,10 +136,18 @@ export default function Pricing() {
                 ]
             },
             {
-                "@type": "Offer",
-                "name": "Starter Plan",
-                "price": "97.00",
-                "priceCurrency": "GBP"
+                "@type": "Product",
+                "name": "AI Voice Agent for Tradespeople",
+                "description": "24/7 AI phone answering for UK tradespeople",
+                "brand": { "@type": "Brand", "name": "AI Voice Agents for Home Services" },
+                "offers": plans.map(plan => ({
+                    "@type": "Offer",
+                    "name": plan.name,
+                    "price": plan.price.toString(),
+                    "priceCurrency": "GBP",
+                    "priceValidUntil": "2027-12-31",
+                    "availability": "https://schema.org/InStock"
+                }))
             },
             {
                 "@type": "FAQPage",
@@ -36,13 +163,25 @@ export default function Pricing() {
     return (
         <>
             <SEOHead
-                title="AI Voice Agent Pricing for Tradespeople | From £97/mo | No Contracts"
-                description="Simple, upfront pricing for UK trades. AI phone answering from £97/mo. No setup fees, no contracts, cancel anytime. Free 7-day trial."
+                title="AI Voice Agent Plans for Tradespeople | From £97/mo | No Contracts"
+                description="Choose your AI phone answering plan. Answers every call, books jobs, texts you the details. Built for UK plumbers, electricians, builders. Live in 24 hours."
                 schema={schema}
                 path="/pricing"
             />
 
-            <SectionWrapper bg="soft" className="pt-10 md:pt-16 pb-16">
+            {/* Cancelled payment message */}
+            {wasCancelled && (
+                <div className="bg-primary/5 border-b border-primary/20">
+                    <div className="max-w-7xl mx-auto px-5 md:px-8 py-4 text-center">
+                        <p className="text-dark font-medium">
+                            No worries — your plan selection is still here. Pick up where you left off whenever you're ready.
+                        </p>
+                    </div>
+                </div>
+            )}
+
+            {/* Header */}
+            <SectionWrapper bg="soft" className="pt-10 md:pt-16 pb-12">
                 <div className="text-center max-w-3xl mx-auto">
                     <OverlineTag>NO HIDDEN FEES</OverlineTag>
                     <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-dark mb-6 leading-tight">
@@ -54,74 +193,111 @@ export default function Pricing() {
                 </div>
             </SectionWrapper>
 
-            <SectionWrapper bg="white" className="pt-4 md:pt-8 bg-surface-soft">
-                <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Main pricing content */}
+            <SectionWrapper bg="white" className="bg-surface-soft">
+                <div className="max-w-7xl mx-auto">
+                    <div className="lg:grid lg:grid-cols-[1fr_320px] lg:gap-10">
+                        {/* Main column */}
+                        <div className="space-y-12">
+                            {/* Step 1: Plan Cards */}
+                            <div>
+                                <h2 className="font-display text-2xl md:text-3xl text-dark mb-6">1. Choose Your Plan</h2>
+                                <PlanSelector selectedPlan={selectedPlan} onSelectPlan={setSelectedPlan} />
 
-                    {/* Starter Plan */}
-                    <div className="bg-white rounded-3xl p-8 border border-border shadow-sm flex flex-col">
-                        <h3 className="text-2xl font-bold text-dark mb-2">Starter</h3>
-                        <p className="text-text mb-6">For sole traders wanting to catch missed calls</p>
-                        <div className="mb-6">
-                            <span className="text-5xl font-display text-dark">£97</span>
-                            <span className="text-text-light font-medium">/month</span>
+                                <div className="text-center mt-8">
+                                    <h4 className="font-semibold text-dark text-lg mb-2">What's a minute?</h4>
+                                    <p className="text-text text-sm max-w-xl mx-auto">
+                                        A minute of actual conversation. 15-second spam calls barely dent your allowance. 100 minutes is roughly 50-80 typical calls per month.
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* Feature Comparison */}
+                            <FeatureComparison />
+
+                            {/* Step 2: Add-ons */}
+                            <div>
+                                <h2 className="font-display text-2xl md:text-3xl text-dark mb-6">2. Customise Your Agent</h2>
+                                <AddonSelector
+                                    selectedAddons={selectedAddons}
+                                    onToggleExtraMinutes={() => setSelectedAddons(prev => ({
+                                        ...prev,
+                                        extraMinutes: !prev.extraMinutes,
+                                    }))}
+                                    onSelectChatbotTier={(tierId) => setSelectedAddons(prev => ({
+                                        ...prev,
+                                        chatbotTier: tierId,
+                                    }))}
+                                />
+                            </div>
+
+                            {/* Urgency bar */}
+                            <div className="bg-gradient-to-r from-primary/5 to-primary-light/5 rounded-2xl p-6 border border-primary/10 text-center">
+                                <p className="font-semibold text-dark mb-1">Free setup this month (usually £149)</p>
+                                <p className="text-sm text-text">Average setup time: 24 hours. Join 50+ UK tradespeople already using AI.</p>
+                            </div>
+
+                            {/* Step 3: Order Form */}
+                            <div>
+                                <h2 className="font-display text-2xl md:text-3xl text-dark mb-2">3. Your Details</h2>
+                                <p className="text-text mb-6">Fill in your details below and choose how to pay. We'll ring you within 2 hours to get your AI agent configured.</p>
+
+                                <div className="bg-white rounded-2xl border border-border shadow-card p-6 md:p-8">
+                                    <OrderForm
+                                        selectedPlan={selectedPlan}
+                                        selectedAddons={selectedAddons}
+                                        initialTrade={initialTrade}
+                                        onSubmit={handleFormSubmit}
+                                    />
+
+                                    {formError && (
+                                        <div className="mt-4 p-4 bg-red-50 text-red-600 rounded-lg text-sm font-medium border border-red-100">
+                                            {formError}
+                                        </div>
+                                    )}
+
+                                    {/* Micro-testimonials */}
+                                    <div className="mt-6 pt-6 border-t border-border">
+                                        <div className="grid md:grid-cols-2 gap-4">
+                                            <blockquote className="text-sm text-text italic">
+                                                "Best thing I've done for my business this year."
+                                                <footer className="text-xs text-text-light mt-1 not-italic font-medium">— Dave, Plumber</footer>
+                                            </blockquote>
+                                            <blockquote className="text-sm text-text italic">
+                                                "Paid for itself in the first week. Wish I'd done it sooner."
+                                                <footer className="text-xs text-text-light mt-1 not-italic font-medium">— Sarah, Electrician</footer>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+
+                                    {/* Payment Buttons */}
+                                    <div className="mt-8">
+                                        <PaymentButtons
+                                            selectedPlan={selectedPlan}
+                                            selectedAddons={selectedAddons}
+                                            disabled={!selectedPlan}
+                                            onPay={(method) => {
+                                                // Dispatch a custom event that OrderForm listens for
+                                                const event = new CustomEvent('pricing-pay', { detail: { method } });
+                                                document.dispatchEvent(event);
+                                            }}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <Button href="/contact" variant="secondary" className="mb-8 w-full">Start 7-Day Free Trial</Button>
 
-                        <ul className="space-y-4 mb-8 flex-grow">
-                            <li className="flex gap-3"><span className="text-success">✓</span> Up to 100 conversation minutes</li>
-                            <li className="flex gap-3"><span className="text-success">✓</span> Business hours availability</li>
-                            <li className="flex gap-3"><span className="text-success">✓</span> UK local or mobile number</li>
-                            <li className="flex gap-3"><span className="text-success">✓</span> SMS/email summaries</li>
-                        </ul>
+                        {/* Sticky sidebar (desktop only) */}
+                        <div className="hidden lg:block">
+                            <div className="sticky top-24">
+                                <OrderSummary
+                                    selectedPlan={selectedPlan}
+                                    selectedAddons={selectedAddons}
+                                    onScrollToForm={scrollToForm}
+                                />
+                            </div>
+                        </div>
                     </div>
-
-                    {/* Professional Plan */}
-                    <div className="bg-dark rounded-3xl p-8 border border-primary relative shadow-2xl shadow-primary/20 flex flex-col transform md:-translate-y-4">
-                        <div className="absolute -top-4 inset-x-0 flex justify-center">
-                            <span className="bg-gradient-to-r from-primary to-primary-light text-white text-xs font-bold uppercase tracking-widest py-1.5 px-4 rounded-full">Most Popular</span>
-                        </div>
-                        <h3 className="text-2xl font-bold text-white mb-2">Professional</h3>
-                        <p className="text-white/60 mb-6">For busy tradespeople handling out-of-hours</p>
-                        <div className="mb-6">
-                            <span className="text-5xl font-display text-white">£157</span>
-                            <span className="text-white/60 font-medium">/month</span>
-                        </div>
-                        <Button href="/contact" variant="primary" className="mb-8 w-full">Start 7-Day Free Trial</Button>
-
-                        <ul className="space-y-4 mb-8 text-white/90 flex-grow">
-                            <li className="flex gap-3"><span className="text-success">✓</span> Up to 200 conversation minutes</li>
-                            <li className="flex gap-3"><span className="text-success">✓</span> <strong>24/7/365 availability</strong></li>
-                            <li className="flex gap-3"><span className="text-success">✓</span> UK local or mobile number</li>
-                            <li className="flex gap-3"><span className="text-success">✓</span> Emergency escalation paths</li>
-                            <li className="flex gap-3"><span className="text-success">✓</span> Basic CRM/Calendar integration</li>
-                        </ul>
-                    </div>
-
-                    {/* Growth Plan */}
-                    <div className="bg-white rounded-3xl p-8 border border-border shadow-sm flex flex-col">
-                        <h3 className="text-2xl font-bold text-dark mb-2">Growth</h3>
-                        <p className="text-text mb-6">For growing teams and multi-van operations</p>
-                        <div className="mb-6">
-                            <span className="text-5xl font-display text-dark">£217</span>
-                            <span className="text-text-light font-medium">/month</span>
-                        </div>
-                        <Button href="/contact" variant="secondary" className="mb-8 w-full">Start 7-Day Free Trial</Button>
-
-                        <ul className="space-y-4 mb-8 flex-grow">
-                            <li className="flex gap-3"><span className="text-success">✓</span> Up to 360 conversation minutes</li>
-                            <li className="flex gap-3"><span className="text-success">✓</span> 24/7/365 availability</li>
-                            <li className="flex gap-3"><span className="text-success">✓</span> Multiple local lines included</li>
-                            <li className="flex gap-3"><span className="text-success">✓</span> Website voice widget included</li>
-                            <li className="flex gap-3"><span className="text-success">✓</span> Advanced integrations</li>
-                            <li className="flex gap-3"><span className="text-success">✓</span> Full call recording</li>
-                        </ul>
-                    </div>
-
-                </div>
-
-                <div className="text-center mt-10 max-w-2xl mx-auto">
-                    <h4 className="font-semibold text-dark text-lg mb-2">What's a minute?</h4>
-                    <p className="text-text">A minute of actual conversation. 15-second spam calls barely dent your allowance. 100 minutes is roughly 50-80 typical calls per month. We don't charge for ring time or hangups.</p>
                 </div>
             </SectionWrapper>
 
@@ -157,18 +333,24 @@ export default function Pricing() {
             </SectionWrapper>
 
             {/* FAQ */}
-            <SectionWrapper bg="soft">
-                <div className="max-w-3xl mx-auto">
-                    <div className="text-center mb-12">
-                        <h2 className="font-display text-3xl md:text-4xl text-dark">Pricing FAQs</h2>
-                    </div>
-                    <div className="bg-white rounded-2xl shadow-card border border-border p-8 md:p-10">
+            <section className="bg-white py-20 md:py-28">
+                <div className="max-w-3xl mx-auto px-5 md:px-8">
+                    <h2 className="font-display text-3xl md:text-4xl text-dark text-center mb-4">Pricing FAQs</h2>
+                    <p className="text-text text-center mb-12 max-w-lg mx-auto">Everything you need to know before you decide.</p>
+                    <div className="bg-surface-soft rounded-2xl shadow-card border border-border p-8 md:p-10">
                         {pricingFaqs.map((faq, i) => (
                             <FAQAccordion key={i} question={faq.q} answer={faq.a} />
                         ))}
                     </div>
                 </div>
-            </SectionWrapper>
+            </section>
+
+            {/* Mobile order bar (replaces default MobileCTA on this page) */}
+            <MobileOrderBar
+                selectedPlan={selectedPlan}
+                selectedAddons={selectedAddons}
+                onScrollToForm={scrollToForm}
+            />
         </>
     );
 }

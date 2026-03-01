@@ -5,6 +5,7 @@ import Button from '../ui/Button';
 import FAQAccordion from '../ui/FAQAccordion';
 import ConversationMockup from '../hero/ConversationMockup';
 import TradeCard from '../ui/TradeCard';
+import MiniPricingCard from '../ui/MiniPricingCard';
 import { trades } from '../../data/trades';
 
 export default function TradeTemplate({ slug }) {
@@ -136,6 +137,13 @@ export default function TradeTemplate({ slug }) {
                         {trade.roiDescription}
                     </p>
                     <Button href="/pricing" variant="secondary-light" className="bg-white !text-dark hover:!bg-white/90">View Plans From £97/mo</Button>
+                </div>
+            </SectionWrapper>
+
+            {/* Mini Pricing Card */}
+            <SectionWrapper bg="soft">
+                <div className="max-w-3xl mx-auto">
+                    <MiniPricingCard tradeSlug={slug} />
                 </div>
             </SectionWrapper>
 

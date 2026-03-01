@@ -1,5 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /order-confirmed
+Disallow: /get-started
 
 # Sitemap
 Sitemap: https://www.aivoiceagentsforhomeservices.co.uk/sitemap.xml

@@ -6,7 +6,7 @@ export default function TermsOfService() {
         <>
             <Helmet>
                 <html lang="en-GB" />
-                <title>Terms of Service | Antek Automation Ltd</title>
+                <title>Terms of Service | Antek Automation</title>
                 <meta name="description" content="Terms of Service and Business conditions for AI Voice Agents for Home Services." />
                 <link rel="canonical" href="https://www.aivoiceagentsforhomeservices.co.uk/terms" />
             </Helmet>
@@ -18,7 +18,7 @@ export default function TermsOfService() {
 
                     <h2>1. Introduction</h2>
                     <p>
-                        These Terms of Service ("Terms") dictate the rules and regulations for the use of the services provided by Antek Automation Ltd ("we", "us", "our"), trading as AI Voice Agents for Home Services.
+                        These Terms of Service ("Terms") dictate the rules and regulations for the use of the services provided by Antek Automation ("we", "us", "our"), trading as AI Voice Agents for Home Services.
                     </p>
                     <p>
                         By accessing this website and utilizing our AI voice agent services, we assume you accept these Terms in full. Do not continue to use our services if you do not agree to all the Terms stated on this page.
@@ -43,12 +43,12 @@ export default function TermsOfService() {
                         While our AI agents are highly advanced and strictly prompted to follow your business rules, natural language processing can occasionally result in misunderstood intents, hallucinated responses, or failure to capture data due to background noise or heavy accents.
                     </p>
                     <p>
-                        <strong>Limitation of Liability:</strong> Antek Automation Ltd shall not be held liable for any direct, indirect, incidental, or consequential damages resulting from lost business, missed appointments, or miscommunications caused by the AI agent. The tradesperson assumes the inherent risks of automated communication.
+                        <strong>Limitation of Liability:</strong> Antek Automation shall not be held liable for any direct, indirect, incidental, or consequential damages resulting from lost business, missed appointments, or miscommunications caused by the AI agent. The tradesperson assumes the inherent risks of automated communication.
                     </p>
 
                     <h2>5. Data and Privacy (Data Processing Addendum)</h2>
                     <p>
-                        In providing this service, Antek Automation Ltd acts as a Data Processor, while you (the business owner) act as the Data Controller under the UK GDPR.
+                        In providing this service, Antek Automation acts as a Data Processor, while you (the business owner) act as the Data Controller under the UK GDPR.
                         You are responsible for ensuring you have the legal right to record and process caller information.
                     </p>
                     <p>
@@ -64,7 +64,7 @@ export default function TermsOfService() {
                     <h2>7. Contact Information</h2>
                     <p>
                         For any queries regarding these Terms, please contact us:<br />
-                        <strong>Antek Automation Ltd</strong><br />
+                        <strong>Antek Automation</strong><br />
                         Hampshire, United Kingdom<br />
                         Email: info@antekautomation.com
                     </p>
