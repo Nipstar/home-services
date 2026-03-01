@@ -224,9 +224,8 @@ export default function Home() {
                         <p className="text-white/80 text-lg md:text-xl mb-10 leading-relaxed max-w-2xl mx-auto">
                             No card required. No contracts. No tech knowledge needed. If you can answer a phone, you can set this up.
                         </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-                            <Button href="/pricing" variant="secondary-light" className="bg-white !text-primary hover:!bg-white/90 !border-transparent">Try It Free for 7 Days</Button>
-                            <Button href="https://cal.com/antek-automation/30min" variant="secondary-light">Book a 15-Min Demo</Button>
+                        <div className="flex justify-center mb-6">
+                            <Button href="https://cal.com/antek-automation/30min" variant="secondary-light" className="bg-white !text-primary hover:!bg-white/90 !border-transparent">Book a 15-Min Demo</Button>
                         </div>
                         <p className="text-sm font-medium text-white/80 tracking-wide">
                             No card required &middot; No contracts &middot; Cancel anytime
