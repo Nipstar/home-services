@@ -93,9 +93,8 @@ export default function ProblemTemplate({
                     <p className="text-xl text-white/80 mb-10">
                         Try our AI voice agents completely free for 7 days. If it doesn't pay for itself, walk away.
                     </p>
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Button href="https://cal.com/antek-automation/30min" variant="secondary-light">Book a 15-Min Demo</Button>
-                        <Button variant="primary">Start Your 7-Day Free Trial</Button>
+                    <div className="flex justify-center">
+                        <Button href="https://cal.com/antek-automation/30min" variant="secondary-light" className="bg-white !text-primary hover:!bg-white/90 !border-transparent">Book a 15-Min Demo</Button>
                     </div>
                     <p className="text-white/80 text-sm mt-6">No credit card required. Cancel anytime.</p>
                 </div>

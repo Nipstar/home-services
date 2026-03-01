@@ -99,9 +99,8 @@ export default function CompareTemplate({
             {/* CTA */}
             <SectionWrapper bg="gradient" className="text-center">
                 <h2 className="text-white font-display text-4xl mb-8">Ready up upgrade your answering service?</h2>
-                <div className="flex justify-center gap-4">
-                    <Button href="/pricing" variant="secondary-light" className="bg-white !text-primary hover:!bg-white/90">View Pricing</Button>
-                    <Button href="https://cal.com/antek-automation/30min" variant="secondary">Book Demo</Button>
+                <div className="flex justify-center">
+                    <Button href="https://cal.com/antek-automation/30min" variant="secondary-light" className="bg-white !text-primary hover:!bg-white/90 !border-transparent">Book a 15-Min Demo</Button>
                 </div>
             </SectionWrapper>
         </>
