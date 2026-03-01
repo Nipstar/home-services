@@ -142,7 +142,7 @@ export default function GetStarted() {
 
                 const data = await response.json();
                 if (data.url) {
-                    window.location.href = data.url;
+                    window.gtagSendEvent ? window.gtagSendEvent(data.url) : (window.location.href = data.url);
                 } else {
                     setFormError('Something went wrong. Please try again or contact us.');
                 }
@@ -181,7 +181,7 @@ export default function GetStarted() {
 
                 const data = await response.json();
                 if (data.url) {
-                    window.location.href = data.url;
+                    window.gtagSendEvent ? window.gtagSendEvent(data.url) : (window.location.href = data.url);
                 } else {
                     setFormError('Something went wrong creating your PayPal subscription. Please try again or contact us.');
                 }
@@ -200,6 +200,24 @@ export default function GetStarted() {
                 <title>Get Your AI Voice Agent | From £97/mo | Live in 24 Hours</title>
                 <meta name="description" content="AI phone answering for tradespeople. Answers calls 24/7, sounds human, books jobs straight into your diary. No contracts. Choose your plan now." />
                 <link rel="canonical" href="https://www.aivoiceagentsforhomeservices.co.uk/get-started" />
+                <script>{`
+                    function gtagSendEvent(url) {
+                        var callback = function () {
+                            if (typeof url === 'string') {
+                                window.location = url;
+                            }
+                        };
+                        if (window.gtag) {
+                            gtag('event', 'purchase', {
+                                'event_callback': callback,
+                                'event_timeout': 2000
+                            });
+                        } else {
+                            callback();
+                        }
+                        return false;
+                    }
+                `}</script>
             </Helmet>
 
             {/* ─── Minimal Header ─────────────────────────────── */}
