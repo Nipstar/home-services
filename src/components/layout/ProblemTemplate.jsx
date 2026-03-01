@@ -97,7 +97,7 @@ export default function ProblemTemplate({
                         <Button href="https://cal.com/antek-automation/30min" variant="secondary-light">Book a 15-Min Demo</Button>
                         <Button variant="primary">Start Your 7-Day Free Trial</Button>
                     </div>
-                    <p className="text-white/50 text-sm mt-6">No credit card required. Cancel anytime.</p>
+                    <p className="text-white/80 text-sm mt-6">No credit card required. Cancel anytime.</p>
                 </div>
             </SectionWrapper>
         </>

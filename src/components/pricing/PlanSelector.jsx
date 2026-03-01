@@ -52,7 +52,7 @@ export default function PlanSelector({ selectedPlan, onSelectPlan }) {
                                 {plan.name}
                             </h3>
                         </div>
-                        <p className={`mb-6 text-sm ${isHighlighted ? 'text-white/60' : 'text-text'}`}>
+                        <p className={`mb-6 text-sm ${isHighlighted ? 'text-white/80' : 'text-text'}`}>
                             {plan.description}
                         </p>
 
@@ -60,7 +60,7 @@ export default function PlanSelector({ selectedPlan, onSelectPlan }) {
                             <span className={`text-[2.75rem] font-display leading-none ${isHighlighted ? 'text-white' : 'text-dark'}`}>
                                 £{plan.price}
                             </span>
-                            <span className={`text-sm font-medium ${isHighlighted ? 'text-white/50' : 'text-text-light'}`}>
+                            <span className={`text-sm font-medium ${isHighlighted ? 'text-white/80' : 'text-text-light'}`}>
                                 /month
                             </span>
                         </div>
@@ -88,7 +88,7 @@ export default function PlanSelector({ selectedPlan, onSelectPlan }) {
                             ))}
                         </ul>
 
-                        <p className={`mt-6 text-xs font-medium ${isHighlighted ? 'text-white/40' : 'text-text-light'}`}>
+                        <p className={`mt-6 text-xs font-medium ${isHighlighted ? 'text-white/80' : 'text-text-light'}`}>
                             Live in 24 hours · No contract
                         </p>
                     </button>

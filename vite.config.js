@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
+import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
 import dotenv from 'dotenv'
 
 // Load .env.billing for local dev so the Stripe serverless function works
@@ -57,8 +58,20 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
+    cssInjectedByJsPlugin(),
     vercelApiPlugin(),
   ],
+  build: {
+    sourcemap: 'hidden',
+    modulePreload: { polyfill: true },
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom', 'react-helmet-async'],
+        },
+      },
+    },
+  },
   ssr: {
     // Bundle all deps into the SSR output to avoid CJS/ESM mismatches
     noExternal: true,

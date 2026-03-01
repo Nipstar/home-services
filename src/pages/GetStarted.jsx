@@ -199,7 +199,7 @@ export default function GetStarted() {
                 <html lang="en-GB" />
                 <title>Get Your AI Voice Agent | From £97/mo | Live in 24 Hours</title>
                 <meta name="description" content="AI phone answering for tradespeople. Answers calls 24/7, sounds human, books jobs straight into your diary. No contracts. Choose your plan now." />
-                <meta name="robots" content="noindex, nofollow" />
+                <link rel="canonical" href="https://www.aivoiceagentsforhomeservices.co.uk/get-started" />
             </Helmet>
 
             {/* ─── Minimal Header ─────────────────────────────── */}
@@ -256,7 +256,7 @@ export default function GetStarted() {
                     <p className="text-white/90 text-sm md:text-base italic">
                         "Best thing I've done for my business this year. Haven't missed a call since."
                     </p>
-                    <p className="text-white/50 text-xs mt-1">— Dave, Plumber, Hampshire</p>
+                    <p className="text-white/80 text-xs mt-1">— Dave, Plumber, Hampshire</p>
                 </div>
             </div>
 
@@ -283,7 +283,7 @@ export default function GetStarted() {
                         ].map((benefit, i) => (
                             <div key={i} className="text-center p-8 rounded-2xl bg-surface-soft border border-border hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300">
                                 <benefit.icon className="w-16 h-16 mx-auto mb-5" />
-                                <h3 className="font-display text-xl text-dark mb-3">{benefit.title}</h3>
+                                <h2 className="font-display text-xl text-dark mb-3">{benefit.title}</h2>
                                 <p className="text-text text-sm leading-relaxed">{benefit.text}</p>
                             </div>
                         ))}
@@ -501,7 +501,7 @@ export default function GetStarted() {
             </section>
 
             {/* ─── Minimal Footer ─────────────────────────────── */}
-            <div className="bg-[#1A1A2E] text-white/50 py-6 text-center text-sm">
+            <div className="bg-[#1A1A2E] text-white/80 py-6 text-center text-sm">
                 <div className="max-w-7xl mx-auto px-5 md:px-8 flex flex-wrap justify-center gap-4">
                     <span>&copy; {new Date().getFullYear()} Antek Automation</span>
                     <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>

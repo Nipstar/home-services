@@ -228,7 +228,7 @@ export default function Home() {
                             <Button href="/pricing" variant="secondary-light" className="bg-white !text-primary hover:!bg-white/90 !border-transparent">Try It Free for 7 Days</Button>
                             <Button href="https://cal.com/antek-automation/30min" variant="secondary-light">Book a 15-Min Demo</Button>
                         </div>
-                        <p className="text-sm font-medium text-white/50 tracking-wide">
+                        <p className="text-sm font-medium text-white/80 tracking-wide">
                             No card required &middot; No contracts &middot; Cancel anytime
                         </p>
                     </div>

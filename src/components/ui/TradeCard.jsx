@@ -19,7 +19,7 @@ export default function TradeCard({ trade, tagLine, accent, icon: Icon, link }) 
 
             <div className="relative z-10 w-[85%]">
                 <h3 className="text-2xl font-semibold text-white mb-2">{trade}</h3>
-                <p className="text-white/65 text-sm mb-5 leading-snug">{tagLine}</p>
+                <p className="text-white/80 text-sm mb-5 leading-snug">{tagLine}</p>
                 <span
                     className="font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all"
                     style={{ color: accent }}

@@ -15,7 +15,7 @@ export default function ConversationMockup({ messages = defaultMessages }) {
                 style={{ transform: 'rotateY(-5deg) rotateX(2deg)' }}>
 
                 {/* Status Bar */}
-                <div className="flex justify-between items-center px-6 py-2 text-[10px] font-medium text-white/60 bg-[#1A1A2E]/80 backdrop-blur">
+                <div className="flex justify-between items-center px-6 py-2 text-[10px] font-medium text-white/80 bg-[#1A1A2E]/80 backdrop-blur">
                     <span>09:41</span>
                     <div className="flex gap-1.5 items-center">
                         {/* Signal & Battery simple bars */}
@@ -54,7 +54,7 @@ export default function ConversationMockup({ messages = defaultMessages }) {
                 <div className="p-5 flex flex-col gap-4 bg-[#1A1A2E] bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wMykiLz48L3N2Zz4=')] min-h-[380px]">
                     {messages.map((msg, i) => (
                         <div key={i} className={`flex flex-col max-w-[85%] ${msg.role === 'agent' ? 'self-start' : 'self-end items-end'}`}>
-                            <span className="text-[10px] text-white/40 mb-1 px-1">
+                            <span className="text-[10px] text-white/80 mb-1 px-1">
                                 {msg.role === 'agent' ? 'AI Voice Agent' : msg.name}
                             </span>
                             <div className={`p-3.5 rounded-2xl text-[13px] leading-relaxed relative ${msg.role === 'agent'

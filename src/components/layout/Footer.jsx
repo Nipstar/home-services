@@ -13,7 +13,7 @@ export default function Footer() {
                             <img src={logoUrl} alt="AI Voice Agents Logo" className="w-10 h-10 md:w-12 md:h-12" />
                             <div className="flex flex-col">
                                 <span className="text-white font-display text-2xl leading-none">AI Voice Agents</span>
-                                <span className="text-white/60 text-sm font-medium tracking-wide mt-1">for Home Services</span>
+                                <span className="text-white/80 text-sm font-medium tracking-wide mt-1">for Home Services</span>
                             </div>
                         </Link>
                         <p className="text-white/80 mb-6 font-medium">Stop playing secretary. Start getting paid.</p>
@@ -72,7 +72,7 @@ export default function Footer() {
 
                 {/* SEO Links Block (Solutions/Problems) */}
                 <div className="pt-8 mb-8 border-t border-white/10 hidden md:block">
-                    <p className="text-white/50 text-sm font-semibold mb-4 uppercase tracking-wider">Solutions & Use Cases</p>
+                    <p className="text-white/80 text-sm font-semibold mb-4 uppercase tracking-wider">Solutions & Use Cases</p>
                     <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm">
                         <Link to="/after-hours-calls-tradesmen" className="hover:text-white transition-colors">After Hours Calls</Link>
                         <Link to="/cant-answer-phone-on-the-job" className="hover:text-white transition-colors">Can't Answer On Job</Link>

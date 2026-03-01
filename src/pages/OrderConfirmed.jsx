@@ -111,7 +111,7 @@ export default function OrderConfirmed() {
             </SectionWrapper>
 
             {/* Minimal footer */}
-            <div className="bg-[#1A1A2E] text-white/50 py-6 text-center text-sm">
+            <div className="bg-[#1A1A2E] text-white/80 py-6 text-center text-sm">
                 <div className="max-w-7xl mx-auto px-5 md:px-8 flex flex-wrap justify-center gap-4">
                     <span>&copy; {new Date().getFullYear()} Antek Automation</span>
                     <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>

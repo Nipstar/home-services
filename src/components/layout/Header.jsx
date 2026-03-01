@@ -38,7 +38,7 @@ export default function Header() {
                     <img src={logoUrl} alt="AI Voice Agents Logo" className="w-8 h-8 md:w-10 md:h-10" />
                     <div className="flex flex-col">
                         <span className="text-white font-display text-xl md:text-2xl leading-none">AI Voice Agents</span>
-                        <span className="text-white/60 text-xs font-medium tracking-wide mt-1">for Home Services</span>
+                        <span className="text-white/80 text-xs font-medium tracking-wide mt-1">for Home Services</span>
                     </div>
                 </Link>
 
@@ -100,7 +100,7 @@ export default function Header() {
                 <div className="fixed inset-0 z-40 bg-[#1A1A2E] pt-24 px-5 pb-8 overflow-y-auto lg:hidden flex flex-col">
                     <nav className="flex flex-col gap-6 text-xl font-display">
                         <div>
-                            <div className="text-white/50 text-sm font-sans font-semibold uppercase tracking-wider mb-4">For Trades</div>
+                            <div className="text-white/80 text-sm font-sans font-semibold uppercase tracking-wider mb-4">For Trades</div>
                             <div className="flex flex-col gap-4 pl-4 border-l border-white/10">
                                 {trades.map((trade) => (
                                     <Link key={trade.path} to={trade.path} className="text-white/90">{trade.name}</Link>
