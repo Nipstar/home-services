@@ -37,10 +37,10 @@ export function getUtmParams() {
 // Fire purchase conversion event (on order-confirmed page)
 export function trackConversion(orderTotal, planName) {
     // Google Ads conversion
-    // Andy: Replace YOUR_CONVERSION_ID and YOUR_CONVERSION_LABEL in Google Tag script
+    // Andy: Replace YOUR_CONVERSION_LABEL with your conversion action label from Google Ads
     if (window.gtag) {
         gtag('event', 'conversion', {
-            send_to: 'AW-YOUR_CONVERSION_ID/YOUR_CONVERSION_LABEL',
+            send_to: 'AW-17947994704/YOUR_CONVERSION_LABEL',
             value: orderTotal,
             currency: 'GBP',
         });
