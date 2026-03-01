@@ -204,7 +204,7 @@ export default function GetStarted() {
 
             {/* ─── Minimal Header ─────────────────────────────── */}
             <div className="bg-white border-b border-border py-4 sticky top-0 z-50">
-                <div className="max-w-7xl mx-auto px-5 md:px-8 flex items-center justify-between">
+                <div className="max-w-7xl mx-auto px-5 md:px-8 flex items-center">
                     <Link to="/" className="flex items-center gap-3">
                         <img src={logoUrl} alt="AI Voice Agents Logo" className="w-10 h-10" />
                         <div className="flex flex-col">
@@ -212,10 +212,6 @@ export default function GetStarted() {
                             <span className="text-text-light text-xs font-medium tracking-wide mt-0.5">for Home Services</span>
                         </div>
                     </Link>
-                    <a href="tel:03330389960" className="flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary-dark transition-colors">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-                        0333 038 9960
-                    </a>
                 </div>
             </div>
 
