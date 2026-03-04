@@ -4,6 +4,7 @@ import ScrollToTop from './components/layout/ScrollToTop';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import MobileCTA from './components/layout/MobileCTA';
+import ExitIntentPopup from './components/ExitIntentPopup';
 
 // Core Pages
 import Home from './pages/Home';
@@ -155,6 +156,7 @@ function App() {
     <HelmetProvider>
       <Router>
         <AppContent />
+        <ExitIntentPopup />
       </Router>
     </HelmetProvider>
   );

@@ -8,7 +8,7 @@ export const trades = {
         icon: PlumberIcon,
         tagLine: 'Stop losing emergency callouts to the bloke who answers first',
         title: 'AI Voice Agent for Plumbers UK | Never Miss Calls',
-        description: 'AI phone answering built for UK plumbers. Answers calls 24/7, captures job details, books appointments. From £97/mo. Free 7-day trial.',
+        description: 'AI phone answering built for UK plumbers. Answers calls 24/7, captures job details, books appointments. From £97/mo.',
         h1: 'AI Voice Agent for Plumbers — Stop Losing Jobs to Missed Calls',
         opening: "You're under a sink, covered in who-knows-what, and your phone's going off for the third time in an hour. You can't answer — you're literally up to your elbows. By the time you ring back, they've already called two other plumbers and booked the one who picked up first. That emergency burst pipe job? Gone. The bathroom refit quote? Someone else's. All because you were busy doing actual plumbing.",
         painPoints: [
@@ -54,7 +54,7 @@ export const trades = {
         icon: ElectricianIcon,
         tagLine: "Your AI handles the calls while you're up a ladder with both hands full",
         title: 'AI Voice Agent for Electricians UK | 24/7',
-        description: 'AI phone answering for UK electricians. Never miss an emergency callout or rewire quote while you are on the tools. Free 7-day trial.',
+        description: 'AI phone answering for UK electricians. Never miss an emergency callout or rewire quote while you are on the tools. From £97/mo.',
         h1: 'AI Voice Agent for Electricians — Work Safe, Stop Missing Calls',
         opening: "You're halfway through a rewire, there's cables everywhere, your hands are full, and you're not about to stop what you're doing to fish your phone out. Or you're up a ladder fitting a consumer unit and it's genuinely not safe to answer. Your phone rings four times today while you're working — and four potential customers ring someone else instead. That Part P certification job? Gone to a sparky who answered his phone.",
         painPoints: [
@@ -186,7 +186,7 @@ export const trades = {
         icon: RooferIcon,
         tagLine: 'Storm damage emergencies answered instantly — capture leads while competitors miss out',
         title: 'AI Voice Agent for Roofers | Never Miss Storm Leads',
-        description: 'AI answering for UK roofers. Capture storm damage callouts, re-roof quotes, and insurance work 24/7. Free trial.',
+        description: 'AI answering for UK roofers. Capture storm damage callouts, re-roof quotes, and insurance work 24/7. From £97/mo.',
         h1: 'AI Voice Agent for Roofers — Catch Every Emergency Storm Call',
         opening: "It's the middle of a storm. Tiles are blowing off roofs across your area. Your phone should be ringing off the hook — but you're already up a ladder, tarpaulin in hand, wind howling, trying to make a roof safe. By the time you climb down, you've missed eight calls. Seven of them have already rung another roofer. That's potentially £2,000-3,000 in emergency work gone in an afternoon.",
         painPoints: [
@@ -258,7 +258,7 @@ export const trades = {
         icon: LandscaperIcon,
         tagLine: 'Spring rush overwhelming you? AI handles enquiries while you\'re on the tools',
         title: 'AI Voice Agent for Landscapers | Garden Design Leads',
-        description: 'Capture garden design leads and maintenance bookings 24/7. AI for UK landscapers and gardeners. Free trial.',
+        description: 'Capture garden design leads and maintenance bookings 24/7. AI for UK landscapers and gardeners. From £97/mo.',
         h1: 'AI Voice Agent for Landscapers — Never Miss a Garden Project Lead',
         opening: "It's April. The sun's out. Everyone suddenly wants their garden sorted. You're knee-deep in soil, laying a new patio, mower running, strimmer screaming, and your phone's going mental in your pocket. You can't answer. Three missed calls before lunch — one wanted a full garden redesign (£8k job), one wanted decking (£4k), and one wanted weekly mowing (£1,200/year). All three booked someone who answered their phone.",
         painPoints: [
@@ -294,7 +294,7 @@ export const trades = {
         icon: PainterIcon,
         tagLine: 'Both hands on a brush? AI answers while you work',
         title: 'AI Voice Agent for Painters & Decorators UK',
-        description: 'AI phone answering for painters and decorators. Capture quotes while you paint. Never miss a job. Free trial.',
+        description: 'AI phone answering for painters and decorators. Capture quotes while you paint. Never miss a job. From £97/mo.',
         h1: 'AI Voice Agent for Painters & Decorators — Focus on the Finish, Not the Phone',
         opening: "You're up a ladder, brush in one hand, cutting in a ceiling edge, paint tray balanced precariously on the top step. Your phone rings. You can't answer — your hands are literally covered in paint. By the time you've climbed down, wiped your hands, and checked your phone, that's three missed calls. One was a whole-house internal repaint (£3k job). They've already booked Gary from down the road.",
         painPoints: [
@@ -330,7 +330,7 @@ export const trades = {
         icon: HandymanIcon,
         tagLine: 'Diverse jobs, high volume, no time for phone tag — AI handles it all',
         title: 'AI Voice Agent for Handymen | Capture Every Job',
-        description: 'AI answering for UK handymen. Handles flat-pack assembly to fence repairs. Books jobs 24/7. Free trial.',
+        description: 'AI answering for UK handymen. Handles flat-pack assembly to fence repairs. Books jobs 24/7. From £97/mo.',
         h1: 'AI Voice Agent for Handymen — More Jobs, Less Admin',
         opening: "You're the go-to person in your area for 'everything else'. Flat-pack assembly, fence repairs, shelf fitting, TV mounting, grouting, gate fixing — you name it, you do it. Which is brilliant for business but murder for your phone. You're doing three small jobs a day across town, and your phone rings every 20 minutes. Half the time you're mid-job and can't answer. You're losing £30-80 jobs all day, every day.",
         painPoints: [
@@ -438,7 +438,7 @@ export const trades = {
         icon: BathroomFitterIcon,
         tagLine: 'High-value bathroom projects — AI captures quotes while you\'re on the tools',
         title: 'AI Voice Agent for Bathroom Fitters | Quote Capture',
-        description: 'Never miss a bathroom fitting quote again. AI for UK bathroom fitters. Captures leads 24/7. Free trial.',
+        description: 'Never miss a bathroom fitting quote again. AI for UK bathroom fitters. Captures leads 24/7. From £97/mo.',
         h1: 'AI Voice Agent for Bathroom Fitters — Focus on Fitting, Not Phone Tag',
         opening: "You're in the middle of tiling a wet room. Adhesive's mixed, tiles are cut, you're in the zone. Your phone rings. Then again. You can't answer — you've got tile adhesive on your hands and a half-set mix that'll go off if you stop. That missed call was someone wanting a full bathroom refit (£6k job). By the time you ring back at 5pm, they've already got two other quotes lined up and yours is an afterthought.",
         painPoints: [
@@ -476,7 +476,7 @@ export const trades = {
         icon: WindowFitterIcon,
         tagLine: 'Double glazing quotes and FENSA questions answered while you\'re installing',
         title: 'AI Voice Agent for Window Fitters | FENSA Approved',
-        description: 'AI answering for UK window and door fitters. Captures quotes for double glazing, UPVC, and installations. Free trial.',
+        description: 'AI answering for UK window and door fitters. Captures quotes for double glazing, UPVC, and installations. From £97/mo.',
         h1: 'AI Voice Agent for Window Fitters — Capture Every Installation Lead',
         opening: "You're halfway up scaffolding, fitting a bay window, power tools screaming, and your phone's ringing in your back pocket. You can't answer — you're holding a sheet of glass and balancing on a plank. That missed call was someone wanting eight windows and a new front door (£8k job). They've moved on to the next company. You've just lost a week's worth of work because you were physically unable to pick up the phone.",
         painPoints: [
@@ -513,7 +513,7 @@ export const trades = {
         icon: CarpetFitterIcon,
         tagLine: 'Quick turnaround, high volume — AI captures bookings while you\'re laying carpet',
         title: 'AI Voice Agent for Carpet Fitters | Booking Service',
-        description: 'AI answering for UK carpet and vinyl fitters. Captures measurements, bookings, and quotes 24/7. Free trial.',
+        description: 'AI answering for UK carpet and vinyl fitters. Captures measurements, bookings, and quotes 24/7. From £97/mo.',
         h1: 'AI Voice Agent for Carpet Fitters — More Jobs, Less Phone Tag',
         opening: "You're on your knees, stretching carpet across a living room, gripper rods in place, knee kicker in hand. Your phone rings. You can't answer — you're mid-stretch and if you stop now, the carpet will shift. That call was someone wanting three bedrooms carpeted this week (£1,200 job). By the time you finish at 3pm and call back, they've booked someone who answered immediately.",
         painPoints: [

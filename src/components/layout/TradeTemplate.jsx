@@ -67,7 +67,7 @@ export default function TradeTemplate({ slug }) {
                             {trade.opening}
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
-                            <Button href="/pricing" variant="primary">Start 7-Day Free Trial</Button>
+                            <Button href="/pricing" variant="primary">View Plans From £97/mo</Button>
                         </div>
                     </div>
                     <div className="lg:pl-8 flex justify-center lg:justify-end">

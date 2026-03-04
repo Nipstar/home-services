@@ -30,7 +30,7 @@ export default function PaymentButtons({ selectedPlan, selectedAddons, onPay, di
 
     return (
         <div className="space-y-4">
-            {/* Stripe (Card) Button — Primary */}
+            {/* Stripe (Card) Button */}
             <button
                 type="button"
                 onClick={() => handlePay('stripe')}
@@ -41,27 +41,6 @@ export default function PaymentButtons({ selectedPlan, selectedAddons, onPay, di
                     <span className="flex items-center gap-2">{spinner} Redirecting to Stripe...</span>
                 ) : (
                     <>{'\uD83D\uDCB3'} Pay with Card &rarr;</>
-                )}
-            </button>
-
-            {/* Divider */}
-            <div className="flex items-center gap-4">
-                <div className="flex-grow h-px bg-border" />
-                <span className="text-xs text-text-light font-medium">or</span>
-                <div className="flex-grow h-px bg-border" />
-            </div>
-
-            {/* PayPal Button — Secondary */}
-            <button
-                type="button"
-                onClick={() => handlePay('paypal')}
-                disabled={isDisabled}
-                className="w-full bg-[#FFC439] text-[#253B80] font-bold rounded-full py-4 text-base hover:bg-[#F0B72A] hover:-translate-y-0.5 transition-[background-color,transform] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none cursor-pointer flex items-center justify-center gap-2 border border-[#FFC439]/80"
-            >
-                {isLoading === 'paypal' ? (
-                    <span className="flex items-center gap-2">{spinner} Redirecting to PayPal...</span>
-                ) : (
-                    <>Pay with PayPal</>
                 )}
             </button>
 

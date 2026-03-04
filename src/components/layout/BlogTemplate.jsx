@@ -59,9 +59,9 @@ export default function BlogTemplate({ post, children }) {
                     {/* CTA Box inside article */}
                     <div className="max-w-3xl mx-auto mt-16 bg-surface-accent border border-primary/20 p-8 rounded-2xl text-center">
                         <h3 className="text-2xl font-display text-dark mb-4">You did the hard work to get the phone ringing. Let AI answer it.</h3>
-                        <p className="text-text mb-6">Stop missing the leads you just learned how to generate. Try our AI Voice Agent free for 7 days.</p>
+                        <p className="text-text mb-6">Stop missing the leads you just learned how to generate. Plans from just £97/mo.</p>
                         <Link to="/pricing" className="inline-block bg-primary text-white font-bold py-3 px-8 rounded-lg hover:bg-dark transition-colors">
-                            See Pricing & Try Free
+                            See Plans & Get Started
                         </Link>
                     </div>
                 </SectionWrapper>

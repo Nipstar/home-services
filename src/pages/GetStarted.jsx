@@ -8,7 +8,7 @@ import OrderSummary from '../components/pricing/OrderSummary';
 import OrderForm from '../components/pricing/OrderForm';
 import PaymentButtons from '../components/pricing/PaymentButtons';
 import ConversationMockup from '../components/hero/ConversationMockup';
-import { plans, getStripeLineItems, paypalPlanIds, calculateTotal } from '../data/pricing';
+import { plans, getStripeLineItems, calculateTotal } from '../data/pricing';
 import { howItWorksFaqs, landingExtraFaqs } from '../data/faqs';
 import { getUtmParams, captureUtmParams } from '../utils/tracking';
 import logoUrl from '../assets/logo.svg';
@@ -148,45 +148,6 @@ export default function GetStarted() {
                 }
             } catch {
                 setFormError('Unable to connect to payment service. Please contact us on 0333 038 9960.');
-            }
-        } else if (formData.paymentMethod === 'paypal') {
-            const planId = paypalPlanIds[selectedPlan];
-            if (!planId) {
-                setFormError('PayPal is not yet configured. Please use card payment or contact us.');
-                return;
-            }
-            try {
-                const ppPlan = plans.find(p => p.id === selectedPlan);
-                const ppTotal = calculateTotal(selectedPlan, selectedAddons);
-                const response = await fetch('/api/create-paypal-subscription', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        planId,
-                        totalAmount: ppTotal,
-                        customerName: formData.name,
-                        customerEmail: formData.email,
-                        businessName: formData.businessName,
-                        trade: formData.trade,
-                        phone: formData.phone,
-                        postcode: formData.postcode,
-                        website: formData.website,
-                        callsPerDay: formData.callsPerDay,
-                        notes: formData.notes,
-                        planName: ppPlan?.name,
-                        addonDetails: { extraMinutes: selectedAddons.extraMinutes, chatbotTier: selectedAddons.chatbotTier },
-                        utm,
-                    }),
-                });
-
-                const data = await response.json();
-                if (data.url) {
-                    window.gtagSendEvent ? window.gtagSendEvent(data.url) : (window.location.href = data.url);
-                } else {
-                    setFormError('Something went wrong creating your PayPal subscription. Please try again or contact us.');
-                }
-            } catch {
-                setFormError('Unable to connect to PayPal. Please try again or contact us on 0333 038 9960.');
             }
         }
     }, [selectedPlan, selectedAddons]);
@@ -328,7 +289,7 @@ export default function GetStarted() {
 
                     <div className="text-center mb-12">
                         <h2 className="font-display text-3xl md:text-4xl text-dark mb-4">Choose Your Plan</h2>
-                        <p className="text-text max-w-lg mx-auto">All plans include a free 7-day trial. No setup fees. Cancel anytime.</p>
+                        <p className="text-text max-w-lg mx-auto">No setup fees. No contracts. Cancel anytime.</p>
                     </div>
 
                     <div className="lg:grid lg:grid-cols-[1fr_320px] lg:gap-10">
