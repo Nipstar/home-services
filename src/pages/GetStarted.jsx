@@ -204,7 +204,7 @@ export default function GetStarted() {
                                 Stop Losing Jobs to Missed Calls
                             </h1>
                             <p className="text-lg md:text-xl text-text leading-relaxed mb-8">
-                                AI answers your phone 24/7. Sounds human. Books jobs. From £97/mo.
+                                AI answers your phone 24/7. Sounds human. Books jobs. For less than a meal deal a day.
                             </p>
                             <button
                                 type="button"
