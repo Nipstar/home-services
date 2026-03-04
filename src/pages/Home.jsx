@@ -184,7 +184,7 @@ export default function Home() {
                 </div>
 
                 <div className="text-center">
-                    <Button href="/pricing" variant="primary">Get Started — Plans From £97/mo</Button>
+                    <Button href="/pricing" variant="primary">Get Started — Less Than a Meal Deal a Day</Button>
                 </div>
             </SectionWrapper>
 

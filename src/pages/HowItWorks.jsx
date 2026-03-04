@@ -105,7 +105,7 @@ export default function HowItWorks() {
                 <div className="max-w-2xl mx-auto text-white">
                     <h2 className="font-display text-4xl mb-6">Makes sense? Let's get it set up.</h2>
                     <p className="text-lg mb-8 text-white/80">Set up takes less than 24 hours. No contracts, cancel anytime with a click.</p>
-                    <Button href="/pricing" variant="secondary-light" className="bg-white !text-primary hover:!bg-white/90 !border-transparent w-full sm:w-auto">View Plans From £97/mo</Button>
+                    <Button href="/pricing" variant="secondary-light" className="bg-white !text-primary hover:!bg-white/90 !border-transparent w-full sm:w-auto">Plans For Less Than a Meal Deal a Day</Button>
                 </div>
             </SectionWrapper>
         </>

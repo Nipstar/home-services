@@ -91,7 +91,7 @@ export default function ProblemTemplate({
                         Ready to Stop Losing Jobs to Missed Calls?
                     </h2>
                     <p className="text-xl text-white/80 mb-10">
-                        Plans from just £97/mo. No contracts. If it doesn't pay for itself, walk away.
+                        Plans for less than a meal deal a day. No contracts. If it doesn't pay for itself, walk away.
                     </p>
                     <div className="flex justify-center">
                         <Button href="https://cal.com/antek-automation/30min" variant="secondary-light" className="bg-white !text-primary hover:!bg-white/90 !border-transparent">Book a 15-Min Demo</Button>
